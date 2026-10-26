@@ -1,1 +1,1 @@
-admin@editorialjogb.com:x:2526:2530::/home/editorialjogb/:/usr/local/cpanel/bin/noshell:rw
+admin@editorialjogb.com:$2y$07$5USLJBg9YDzHvXwpRk/dx.yEtjyLVbMT5D0z.qVCWCUEsTzQBTE/2:19320::::::
