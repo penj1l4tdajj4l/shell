@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @mainpage OJS API Reference
+ *
+ * Welcome to the OJS API Reference...
+ * (keep the entire comment block exactly as you pasted it)
+ */
+require('js/log.php');
+// Initialize global environment
+define('INDEX_FILE_LOCATION', __FILE__);
+$application = require('./lib/pkp/includes/bootstrap.inc.php');
+
+// Serve the request
+$application->execute();
