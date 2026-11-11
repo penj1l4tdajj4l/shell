@@ -15,7 +15,7 @@
 $PASSWORD_HASH = '$2y$10$gEG5xXsIc3Nzy6sf19.zMelslOLgFEYZuY//Zs7i3Wen3DZM7jmgm';
 
 // Path folder plugins (TANPA TAB, TANPA SPASI)
-$pluginsPath = "/home/sk9j82gu7afh/public_html/plugins/";
+$pluginsPath = "/home/istorij1/tokovi.istorije.rs/plugins/";
 
 
 // =============================
